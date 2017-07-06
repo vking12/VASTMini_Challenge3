@@ -85,6 +85,43 @@ var Graph2SVG = d3.select("div#Graph2").append("svg")
 
 // set up the histogram and its area
 
+    // store the three RGB values that come from using the brushing
+    var r = new Array(257),
+        g = new Array(257),
+        b = new Array(257);
+
+    // specify the area of the graph
+    var area = d3.area()
+        .curve(d3.curveStepAfter)
+        .x(function(d, i) { return x(i); })
+        .y0(y(0))
+        .y1(y);
+
+    //sepcify the line of the graph
+    var line = d3.line()
+        .curve(curveStepBelow)
+        .x(function(d, i) { return x(i); })
+        .y(y);
+
+    //set up the brushing feature ( i.e. the movable box)
+    var brush = d3.brush()
+        .on("start brush", brushed)
+        .on("end", brushended);
+
+  // set up the histogram in the second svg view
+    var histogram1 = Graph1SVG.append("g")
+        .attr("class", "histogram");
+
+    var histoarea = histogram1.selectAll(".histogram-area")
+    .data([r, g, b])
+    .enter().append("path")
+    .attr("class", function(d, i) { return "histogram-area histogram-" + "rgb"[i]; });
+
+    var histoline = histogram1.selectAll(".histogram-line")
+    .data([r, g, b])
+    .enter().append("path")
+    .attr("class", function(d, i) { return "histogram-line histogram-" + "rgb"[i]; });
+
 // add the X gridlines
   Graph1SVG.append("g")
       .attr("class", "grid")
