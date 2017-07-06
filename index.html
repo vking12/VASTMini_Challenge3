@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8>
+
+
+
+    <title>Mini Challenge 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Get jquery first so bootstrap doesn't run into errors -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+     <!-- Import version 4 of bootstrap  -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="lib/js/resemble.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="src/css/main.css" />
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/css/resemble.css?v1">
+    <link rel="stylesheet" href="lib/css/dropdown.css">
+    <link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/slimmenu.min.css">
+
+    <!-- JS Source -->
+    <script src="src/js/jquery.slimmenu.js"></script>
+    <script src="src/js/image-compairson-main.js"></script>
+    <script src="src/js/imgFuncs.js"></script>
+
+    <title>Mini Challenge 3</title>
+    <script src="src/js/graph.js"></script>
+    <script src="src/js/imgSystem.js"></script>
+
+
+
+
+
+</head>
+<body>
+    <div class="container-fluid">
+      <div id = "image-comparison-div"
+
+          <section role="main">
+            <div class="row">
+              <div class="span20">
+                <center>
+                  <p>
+                <button class="btn" id="example-images">Use lake images (TESTING)</button>
+                </p>
+              </center>
+                  <div class="row">
+                  </div>
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="span12">
+                <div class="row">
+                  <div class="span5">
+
+
+
+                    <div class="dropdown">
+                                <a id="dLabel1" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="/page.html">
+                                    Pick Image 1 <span class="caret"></span>
+                                </a>
+                            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                  <li class="divider"></li>
+                                  <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">RGB</a>
+                                    <ul class="dropdown-menu">
+                                      <li class="dropdown-submenu">
+                                        <a href="#">2014</a>
+                                        <ul class="dropdown-menu">
+                                             <li><input id = "btn1" type = "image" img src="data/rgb/image01_2014_03_17.png" alt="Image 1" style="width:140px;height:140px;">03/17/2014</a></li>
+                                             <li><input id = "btn1" type = "image" img src="data/rgb/image02_2014_08_24.png" alt="Image 1" style="width:140px;height:140px;">08/24/2014</a></li>
+                                             <li><input id = "btn1" type = "image" img src="data/rgb/image03_2014_11_28.png" alt="Image 1" style="width:140px;height:140px;">11/28/2014</a></li>
+                                             <li><input id = "btn1" type = "image" img src="data/rgb/image04_2014_12_30.png" alt="Image 1" style="width:140px;height:140px;">12/30/2014</a></li>
+                                        </ul>
+                                      </li>
+                                      <li class="dropdown-submenu">
+                                        <a href="#">2015</a>
+
+                                      <li class="dropdown-submenu">
+                                        <a href="#">2016</a>
+                                    </ul>
+                                    <li class="divider"></li>
+                                    <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">Original Images</a>
+                                    <ul class="dropdown-menu">
+                                      <li class="dropdown-submenu">
+                                        <a href="#">2014</a>
+                                        <ul class="dropdown-menu">
+                                        </ul>
+                                      </li>
+                                      <li class="dropdown-submenu">
+                                        <a href="#">2015</a>
+
+                                      <li class="dropdown-submenu">
+                                        <a href="#">2016</a>
+                                    </ul>
+                                  </li>
+                                </ul>
+                            </div>
+
+                    <div id="dropzone1" class="drop-zone">
+
+                      First image
+                    </div>
+                    <!-- We will put our canvas and SVG right inline of the first image  -->
+                    <div class="container-fluid">
+                      <div id = "my-histogram">
+                        <div class="row">
+                          <div class="span12">
+                            <div class="row">
+                              <div class="span6">
+                                <!-- Our Canvas -->
+                                <canvas id ="Canvas1" width="331" height="331"></canvas>
+                                <canvas id ="Canvas3" width="331" height="331"></canvas>
+                                <!-- Our SVG -->
+                                <svg id = "Svg1" width="331" height="331"></svg>
+                                <svg id = "Svg3" width="331" height="331"></svg>
+                                <!-- Divs to keep track of where our graphs will be  -->
+                                <div id = "Graph1" width="331" height="331"></div>
+                                <div id = "Graph2" width="331" height="331"></div>
+                                <div id = "Graph3" width="331" height="331"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    </div>
+                    <div class="span3">
+
+                      <div class="dropdown">
+                                  <a id="dLabel2" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="/page.html">
+                                      Pick Image 2 <span class="caret"></span>
+                                  </a>
+
+                              <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                    <li class="divider"></li>
+                                    <li class="dropdown-submenu">
+                                      <a tabindex="-1" href="#">RGB</a>
+                                      <ul class="dropdown-menu">
+                                        <li class="dropdown-submenu">
+                                          <a href="#">2014</a>
+                                          <ul class="dropdown-menu">
+                                            <li><input id = "btn2" type = "image" img src="data/rgb/image01_2014_03_17.png" alt="Image 1" style="width:140px;height:140px;">03/17/2014</a></li>
+                                            <li><input id = "btn2" type = "image" img src="data/rgb/image02_2014_08_24.png" alt="Image 1" style="width:140px;height:140px;">08/24/2014</a></li>
+                                            <li><input id = "btn2" type = "image" img src="data/rgb/image03_2014_11_28.png" alt="Image 1" style="width:140px;height:140px;">11/28/2014</a></li>
+                                            <li><input id = "btn2" type = "image" img src="data/rgb/image04_2014_12_30.png" alt="Image 1" style="width:140px;height:140px;">12/30/2014</a></li>  </ul>
+                                        </li>
+                                        <li class="dropdown-submenu">
+                                          <a href="#">2015</a>
+
+                                        <li class="dropdown-submenu">
+                                          <a href="#">2016</a>
+                                      </ul>
+                                    </li>
+                                  </ul>
+                              </div>
+
+
+                    <div id="dropzone2" class="drop-zone">
+                      Second image
+                    </div>
+                    <canvas id ="Canvas2" width="331" height="331"></canvas>
+                    <svg id = "Svg2" width="331" height="331"></svg>
+
+                    <script src="src/js/brushing.js"></script>
+                    <script src="src/js/graph.js"></script>
+                    <script src="src/js/imgSystem.js"></script>
+                  </div>
+                  <div class="span3">
+
+                    <div id="image-diff" class="drop-zone">
+                      Diff will appear here.
+                    </div>
+                    <div id="thesame" style="display:none;">
+                      <strong>These images are the same!</strong>
+                    </div>
+                    <div id="diff-results" style="display:none;">
+                      <p>
+                        <strong>The second image is <span id="mismatch"></span>% different compared to the first.
+                        <span id="differentdimensions" style="display:none;">And they have different dimensions.</span></strong>
+                      </p>
+
+                    <br/>
+                    <div class="span3">
+                    <div id="option-buttons">
+
+
+                    <div class="btn-group buttons" >
+                      <h5>Ignore:</h5>
+                      <button  class="btn btn-primary" id="raw">Nothing</button>
+                      <button class="btn btn-primary active" id="less">Less</button>
+                      <button class="btn btn-primary" id="colors">Colors</button>
+                      <button class="btn btn-primary" id="antialising">Antialiasing</button>
+                    </div>
+
+                    <br/>
+                    <br/>
+                    <div class="btn-group buttons" >
+                      <h5>Color:</h5>
+                      <button class="btn btn-primary active" id="pink">Pink</button>
+                      <button class="btn btn-primary" id="yellow">Yellow</button>
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <div class="btn-group buttons" >
+                      <h5>Difference:</h5>
+                      <button class="btn btn-primary active" id="flat">Flat</button>
+                      <button class="btn btn-primary" id="movement">Movement</button>
+                      <button class="btn btn-primary" id="flatDifferenceIntensity">Flat + diff intensity</button>
+                      <button class="btn btn-primary" id="movementDifferenceIntensity">Movement + diff intensity</button>
+                    </div>
+                    <br/>
+                    <br/>
+
+                    <div class="btn-group buttons" >
+                      <h5>Opacity:</h5>
+                      <button class="btn btn-primary active" id="opaque">Opaque</button>
+                      <button class="btn btn-primary" id="transparent">Transparent</button>
+                    </div>
+
+                    <br/>
+                    <br/>
+
+
+
+                  </div>
+                </div>
+                </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <br/><br/>
+            <div class="row">
+              <div class="span6">
+
+          </section>
+
+          <footer class="footer">
+
+          </footer>
+        </div>
+
+        <!-- JQuery -->
+        <script>
+        $('.slimmenu').slimmenu(
+          {
+            resizeWidth: '800',
+            collapserTitle: 'Main Menu',
+            animSpeed:'medium',
+            indentChildren: true,
+            childrenIndenter: '&raquo;'
+          });
+          </script>
+
+</div>
+</div>
+</body>
+</html>
