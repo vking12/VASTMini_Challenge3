@@ -6,7 +6,7 @@ h1 {
 }
 
 body {
-    background: #202020 !important;
+    background: #F0F0F0 !important;
     padding-top: 60px;
     color: white !important;
     font-size: 30px !important;
@@ -19,7 +19,7 @@ footer {
 }
 
 .drop-zone {
-    border: 10px dashed #ccc;
+    border: 10px solid #000000;
     color: #ccc;
     font-size: 32px;
     height: 351px;
@@ -43,7 +43,7 @@ footer {
 
 #image-diff {
     margin-left: 150px;
-    margin-top: 33px;
+    margin-top: 55px;
     border-style: solid;
 }
 

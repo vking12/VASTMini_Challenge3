@@ -24,11 +24,13 @@
 
 
     <link rel="stylesheet" href="src/css/main.css" />
+
+
     <link rel="stylesheet" href="lib/css/bootstrap.min.css">
     <link rel="stylesheet" href="lib/css/resemble.css?v1">
     <link rel="stylesheet" href="lib/css/dropdown.css">
     <link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/slimmenu.min.css">
+
 
     <!-- JS Source -->
     <script src="src/js/jquery.slimmenu.js"></script>
@@ -42,6 +44,77 @@
 
 
 
+    <div id="title">
+              <h1 style="color: #000">Mini-Challange 3</h1>
+
+              </div>
+
+
+
+              <!-- Modal -->
+              <div id="myModal" class="modal fade" role="dialog"style="top:200px;left:300px;width:600px;height:700px;">
+                <div class="modal-dialog">
+
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" >&times;</button>
+                      <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body" style="height:400px;">
+                      <div class="span3">
+                      <div id="option-buttons">
+
+                        <center>
+
+                      <div class="btn-group buttons" >
+                        <h5 data-toggle="tooltip" data-placement="top" title="Choose how much tollerence there is in between the dif">
+                        Ignore:
+                      </h5>
+                        <button  class="btn btn-primary" id="raw">Nothing</button>
+                        <button class="btn btn-primary" id="less">Less</button>
+                        <button class="btn btn-primary" id="colors">Colors</button>
+                        <button class="btn btn-primary active" id="antialising">Antialiasing</button>
+                      </div>
+
+                      <br/>
+                      <br/>
+                      <div class="btn-group buttons" >
+                        <h5>Color:</h5>
+                        <button class="btn btn-primary active" id="pink">Pink</button>
+                        <button class="btn btn-primary" id="yellow">Yellow</button>
+                      </div>
+                      <br/>
+                      <br/>
+
+                      <div class="btn-group buttons" >
+                        <h5>Difference:</h5>
+                        <button class="btn btn-primary active" id="flat">Flat</button>
+                        <button class="btn btn-primary" id="movement">Movement</button>
+                        <button class="btn btn-primary" id="flatDifferenceIntensity">Flat + diff intensity</button>
+                        <button class="btn btn-primary" id="movementDifferenceIntensity">Movement + diff intensity</button>
+                      </div>
+                      <br/>
+                      <br/>
+
+                      <div class="btn-group buttons" >
+                        <h5>Opacity:</h5>
+                        <button class="btn btn-primary active" id="opaque">Opaque</button>
+                        <button class="btn btn-primary" id="transparent">Transparent</button>
+                      </div>
+
+                      <br/>
+                      <br/></center>
+                    </div>
+                  </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
 
 </head>
 <body>
@@ -52,9 +125,6 @@
             <div class="row">
               <div class="span20">
                 <center>
-                  <p>
-                <button class="btn" id="example-images">Use lake images (TESTING)</button>
-                </p>
               </center>
                   <div class="row">
                   </div>
@@ -71,50 +141,136 @@
                     <div class="dropdown">
                                 <a id="dLabel1" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="/page.html">
                                     Pick Image 1 <span class="caret"></span>
+
                                 </a>
                             <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                                  <li class="divider"></li>
                                   <li class="dropdown-submenu">
                                     <a tabindex="-1" href="#">RGB</a>
                                     <ul class="dropdown-menu">
                                       <li class="dropdown-submenu">
                                         <a href="#">2014</a>
                                         <ul class="dropdown-menu">
-                                             <li><input id = "btn1" type = "image" img src="data/rgb/image01_2014_03_17.png" alt="Image 1" style="width:140px;height:140px;">03/17/2014</a></li>
-                                             <li><input id = "btn1" type = "image" img src="data/rgb/image02_2014_08_24.png" alt="Image 1" style="width:140px;height:140px;">08/24/2014</a></li>
-                                             <li><input id = "btn1" type = "image" img src="data/rgb/image03_2014_11_28.png" alt="Image 1" style="width:140px;height:140px;">11/28/2014</a></li>
-                                             <li><input id = "btn1" type = "image" img src="data/rgb/image04_2014_12_30.png" alt="Image 1" style="width:140px;height:140px;">12/30/2014</a></li>
-                                        </ul>
+                                          <li><input id = "btn1" type = "image" img src="data/rgb/image01_2014_03_17.png" date="03/17/2014" alt="Image 1" style="width:140px;height:140px;">03/17/2014</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/rgb/image02_2014_08_24.png" date="08/24/2014" alt="Image 1" style="width:140px;height:140px;">08/24/2014</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/rgb/image03_2014_11_28.png" date="11/28/2014" alt="Image 1" style="width:140px;height:140px;">11/28/2014</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/rgb/image04_2014_12_30.png" date="12/30/2014" alt="Image 1" style="width:140px;height:140px;">12/30/2014</a></li>  </ul>
                                       </li>
                                       <li class="dropdown-submenu">
                                         <a href="#">2015</a>
-
+                                        <ul class="dropdown-menu">
+                                          <li><input id = "btn1" type = "image" img src="data/rgb/image05_2015_02_15.png" date="02/15/2015" alt="Image 1" style="width:140px;height:140px;">02/15/2015</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/rgb/image06_2015_06_24.png" date="06/24/2015" alt="Image 1" style="width:140px;height:140px;">06/24/2015</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/rgb/image07_2015_09_12.png" date="09/12/2015" alt="Image 1" style="width:140px;height:140px;">09/12/2015</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/rgb/image08_2015_11_15.png" date="11/15/2015" alt="Image 1" style="width:140px;height:140px;">11/15/2015</a></li>  </ul>
+                                      </li>
                                       <li class="dropdown-submenu">
                                         <a href="#">2016</a>
+                                        <ul class="dropdown-menu">
+                                          <li><input id = "btn1" type = "image" img src="data/rgb/image09_2016_03_06.png" date="03/06/2016" alt="Image 1" style="width:140px;height:140px;">03/06/2016</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/rgb/image10_2016_06_26.png" date="06/26/2016" alt="Image 1" style="width:140px;height:140px;">06/26/2016</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/rgb/image11_2016_09_06.png" date="09/06/2016" alt="Image 1" style="width:140px;height:140px;">09/06/2016</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/rgb/image12_2016_12_19.png" date="12/19/2016" alt="Image 1" style="width:140px;height:140px;">12/19/2016</a></li>  </ul>
                                     </ul>
-                                    <li class="divider"></li>
                                     <li class="dropdown-submenu">
-                                    <a tabindex="-1" href="#">Original Images</a>
+                                    <a tabindex="-1" href="#">Planet Health</a>
                                     <ul class="dropdown-menu">
                                       <li class="dropdown-submenu">
                                         <a href="#">2014</a>
                                         <ul class="dropdown-menu">
-                                        </ul>
+                                          <li><input id = "btn1" type = "image" img src="data/plant_health/image01_2014_03_17.png" date="03/17/2014" alt="Image 1" style="width:140px;height:140px;">03/17/2014</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/plant_health/image02_2014_08_24.png" date="08/24/2014" alt="Image 1" style="width:140px;height:140px;">08/24/2014</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/plant_health/image03_2014_11_28.png" date="11/28/2014" alt="Image 1" style="width:140px;height:140px;">11/28/2014</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/plant_health/image04_2014_12_30.png" date="12/30/2014" alt="Image 1" style="width:140px;height:140px;">12/30/2014</a></li>  </ul>
                                       </li>
                                       <li class="dropdown-submenu">
                                         <a href="#">2015</a>
-
+                                        <ul class="dropdown-menu">
+                                          <li><input id = "btn1" type = "image" img src="data/plant_health/image05_2015_02_15.png" date="02/15/2015" alt="Image 1" style="width:140px;height:140px;">02/15/2015</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/plant_health/image06_2015_06_24.png" date="06/24/2015" alt="Image 1" style="width:140px;height:140px;">06/24/2015</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/plant_health/image07_2015_09_12.png" date="09/12/2015" alt="Image 1" style="width:140px;height:140px;">09/12/2015</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/plant_health/image08_2015_11_15.png" date="11/15/2015" alt="Image 1" style="width:140px;height:140px;">11/15/2015</a></li>  </ul>
+                                      </li>
                                       <li class="dropdown-submenu">
                                         <a href="#">2016</a>
+                                        <ul class="dropdown-menu">
+                                          <li><input id = "btn1" type = "image" img src="data/plant_health/image09_2016_03_06.png" date="03/06/2016" alt="Image 1" style="width:140px;height:140px;">03/06/2016</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/plant_health/image10_2016_06_26.png" date="06/26/2016" alt="Image 1" style="width:140px;height:140px;">06/26/2016</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/plant_health/image11_2016_09_06.png" date="09/06/2016" alt="Image 1" style="width:140px;height:140px;">09/06/2016</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/plant_health/image12_2016_12_19.png" date="12/19/2016" alt="Image 1" style="width:140px;height:140px;">12/19/2016</a></li>  </ul>
                                     </ul>
                                   </li>
+                                  <li class="dropdown-submenu">
+                                    <a tabindex="-1" href="#">Flooded/Burned land</a>
+                                    <ul class="dropdown-menu">
+                                      <li class="dropdown-submenu">
+                                        <a href="#">2014</a>
+                                        <ul class="dropdown-menu">
+                                          <li><input id = "btn1" type = "image" img src="data/flood_burn/image01_2014_03_17.png" date="03/17/2014" alt="Image 1" style="width:140px;height:140px;">03/17/2014</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/flood_burn/image02_2014_08_24.png" date="08/24/2014" alt="Image 1" style="width:140px;height:140px;">08/24/2014</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/flood_burn/image03_2014_11_28.png" date="11/28/2014" alt="Image 1" style="width:140px;height:140px;">11/28/2014</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/flood_burn/image04_2014_12_30.png" date="12/30/2014" alt="Image 1" style="width:140px;height:140px;">12/30/2014</a></li>  </ul>
+                                      </li>
+                                      <li class="dropdown-submenu">
+                                        <a href="#">2015</a>
+                                        <ul class="dropdown-menu">
+                                          <li><input id = "btn1" type = "image" img src="data/flood_burn/image05_2015_02_15.png" date="02/15/2015" alt="Image 1" style="width:140px;height:140px;">02/15/2015</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/flood_burn/image06_2015_06_24.png" date="06/24/2015" alt="Image 1" style="width:140px;height:140px;">06/24/2015</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/flood_burn/image07_2015_09_12.png" date="09/12/2015" alt="Image 1" style="width:140px;height:140px;">09/12/2015</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/flood_burn/image08_2015_11_15.png" date="11/15/2015" alt="Image 1" style="width:140px;height:140px;">11/15/2015</a></li>  </ul>
+                                      </li>
+                                      <li class="dropdown-submenu">
+                                        <a href="#">2016</a>
+                                        <ul class="dropdown-menu">
+                                          <li><input id = "btn1" type = "image" img src="data/flood_burn/image09_2016_03_06.png" date="03/06/2016" alt="Image 1" style="width:140px;height:140px;">03/06/2016</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/flood_burn/image10_2016_06_26.png" date="06/26/2016" alt="Image 1" style="width:140px;height:140px;">06/26/2016</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/flood_burn/image11_2016_09_06.png" date="09/06/2016" alt="Image 1" style="width:140px;height:140px;">09/06/2016</a></li>
+                                          <li><input id = "btn1" type = "image" img src="data/flood_burn/image12_2016_12_19.png" date="12/19/2016" alt="Image 1" style="width:140px;height:140px;">12/19/2016</a></li>  </ul>
+                                    </ul>
+
+
+                                <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#">Snow/Ice/Clouds</a>
+                                <ul class="dropdown-menu">
+                                  <li class="dropdown-submenu">
+                                    <a href="#">2014</a>
+                                    <ul class="dropdown-menu">
+                                      <li><input id = "btn1" type = "image" img src="data/sic/image01_2014_03_17.png" date="03/17/2014" alt="Image 1" style="width:140px;height:140px;">03/17/2014</a></li>
+                                      <li><input id = "btn1" type = "image" img src="data/sic/image02_2014_08_24.png" date="08/24/2014" alt="Image 1" style="width:140px;height:140px;">08/24/2014</a></li>
+                                      <li><input id = "btn1" type = "image" img src="data/sic/image03_2014_11_28.png" date="11/28/2014" alt="Image 1" style="width:140px;height:140px;">11/28/2014</a></li>
+                                      <li><input id = "btn1" type = "image" img src="data/sic/image04_2014_12_30.png" date="12/30/2014" alt="Image 1" style="width:140px;height:140px;">12/30/2014</a></li>  </ul>
+                                  </li>
+                                  <li class="dropdown-submenu">
+                                    <a href="#">2015</a>
+                                    <ul class="dropdown-menu">
+                                      <li><input id = "btn1" type = "image" img src="data/sic/image05_2015_02_15.png" date="02/15/2015" alt="Image 1" style="width:140px;height:140px;">02/15/2015</a></li>
+                                      <li><input id = "btn1" type = "image" img src="data/sic/image06_2015_06_24.png" date="06/24/2015" alt="Image 1" style="width:140px;height:140px;">06/24/2015</a></li>
+                                      <li><input id = "btn1" type = "image" img src="data/sic/image07_2015_09_12.png" date="09/12/2015" alt="Image 1" style="width:140px;height:140px;">09/12/2015</a></li>
+                                      <li><input id = "btn1" type = "image" img src="data/sic/image08_2015_11_15.png" date="11/15/2015" alt="Image 1" style="width:140px;height:140px;">11/15/2015</a></li>  </ul>
+                                  </li>
+                                  <li class="dropdown-submenu">
+                                    <a href="#">2016</a>
+                                    <ul class="dropdown-menu">
+                                      <li><input id = "btn1" type = "image" img src="data/sic/image09_2016_03_06.png" date="03/06/2016" alt="Image 1" style="width:140px;height:140px;">03/06/2016</a></li>
+                                      <li><input id = "btn1" type = "image" img src="data/sic/image10_2016_06_26.png" date="06/26/2016" alt="Image 1" style="width:140px;height:140px;">06/26/2016</a></li>
+                                      <li><input id = "btn1" type = "image" img src="data/sic/image11_2016_09_06.png" date="09/06/2016" alt="Image 1" style="width:140px;height:140px;">09/06/2016</a></li>
+                                      <li><input id = "btn1" type = "image" img src="data/sic/image12_2016_12_19.png" date="12/19/2016" alt="Image 1" style="width:140px;height:140px;">12/19/2016</a></li>  </ul>
                                 </ul>
+                              </li>
+                              </ul>
                             </div>
 
                     <div id="dropzone1" class="drop-zone">
 
                       First image
                     </div>
+
+                    <center style = "background-color:black;width:351px !important;">
+                    <p style = "color:white;">
+                      <font size="5">
+                        Date selected: <span id="myDate" style="color:#16D97E">03/17/2014</span>
+                      </font>
+                    </p>
+                    </center>
                     <!-- We will put our canvas and SVG right inline of the first image  -->
                     <div class="container-fluid">
                       <div id = "my-histogram">
@@ -132,6 +288,10 @@
                                 <div id = "Graph1" width="331" height="331"></div>
                                 <div id = "Graph2" width="331" height="331"></div>
                                 <div id = "Graph3" width="331" height="331"></div>
+                                <!-- this will keep track of our zoomed in views -->
+                                <div id = "Zoom1" width="331" height="331"></div>
+                                <div id = "Zoom2" width="331" height="331"></div>
+                                <div id = "Zoom3" width="331" height="331"></div>
                               </div>
                             </div>
                           </div>
@@ -145,29 +305,125 @@
                       <div class="dropdown">
                                   <a id="dLabel2" role="button" data-toggle="dropdown" class="btn btn-primary" data-target="#" href="/page.html">
                                       Pick Image 2 <span class="caret"></span>
+                                      <p>
+                                        <font size="5">Date selected: <span id="myOtherDate" style="color:#16D97E">12/30/2014</span></font>
+                                      </p>
                                   </a>
 
-                              <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                                    <li class="divider"></li>
-                                    <li class="dropdown-submenu">
-                                      <a tabindex="-1" href="#">RGB</a>
+                                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                        <li class="dropdown-submenu">
+                                          <a tabindex="-1" href="#">RGB</a>
+                                          <ul class="dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a href="#">2014</a>
+                                              <ul class="dropdown-menu">
+                                                <li><input id = "btn2" type = "image" img src="data/rgb/image01_2014_03_17.png" date="03/17/2014" alt="Image 1" style="width:140px;height:140px;">03/17/2014</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/rgb/image02_2014_08_24.png" date="08/24/2014" alt="Image 1" style="width:140px;height:140px;">08/24/2014</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/rgb/image03_2014_11_28.png" date="11/28/2014" alt="Image 1" style="width:140px;height:140px;">11/28/2014</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/rgb/image04_2014_12_30.png" date="12/30/2014" alt="Image 1" style="width:140px;height:140px;">12/30/2014</a></li>  </ul>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a href="#">2015</a>
+                                              <ul class="dropdown-menu">
+                                                <li><input id = "btn2" type = "image" img src="data/rgb/image05_2015_02_15.png" date="02/15/2015" alt="Image 1" style="width:140px;height:140px;">02/15/2015</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/rgb/image06_2015_06_24.png" date="06/24/2015" alt="Image 1" style="width:140px;height:140px;">06/24/2015</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/rgb/image07_2015_09_12.png" date="09/12/2015" alt="Image 1" style="width:140px;height:140px;">09/12/2015</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/rgb/image08_2015_11_15.png" date="11/15/2015" alt="Image 1" style="width:140px;height:140px;">11/15/2015</a></li>  </ul>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a href="#">2016</a>
+                                              <ul class="dropdown-menu">
+                                                <li><input id = "btn2" type = "image" img src="data/rgb/image09_2016_03_06.png" date="03/06/2016" alt="Image 1" style="width:140px;height:140px;">03/06/2016</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/rgb/image10_2016_06_26.png" date="06/26/2016" alt="Image 1" style="width:140px;height:140px;">06/26/2016</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/rgb/image11_2016_09_06.png" date="09/06/2016" alt="Image 1" style="width:140px;height:140px;">09/06/2016</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/rgb/image12_2016_12_19.png" date="12/19/2016" alt="Image 1" style="width:140px;height:140px;">12/19/2016</a></li>  </ul>
+                                          </ul>
+                                          <li class="dropdown-submenu">
+                                          <a tabindex="-1" href="#">Planet Health</a>
+                                          <ul class="dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a href="#">2014</a>
+                                              <ul class="dropdown-menu">
+                                                <li><input id = "btn2" type = "image" img src="data/plant_health/image01_2014_03_17.png" date="03/17/2014" alt="Image 1" style="width:140px;height:140px;">03/17/2014</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/plant_health/image02_2014_08_24.png" date="08/24/2014" alt="Image 1" style="width:140px;height:140px;">08/24/2014</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/plant_health/image03_2014_11_28.png" date="11/28/2014" alt="Image 1" style="width:140px;height:140px;">11/28/2014</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/plant_health/image04_2014_12_30.png" date="12/30/2014" alt="Image 1" style="width:140px;height:140px;">12/30/2014</a></li>  </ul>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a href="#">2015</a>
+                                              <ul class="dropdown-menu">
+                                                <li><input id = "btn2" type = "image" img src="data/plant_health/image05_2015_02_15.png" date="02/15/2015" alt="Image 1" style="width:140px;height:140px;">02/15/2015</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/plant_health/image06_2015_06_24.png" date="06/24/2015" alt="Image 1" style="width:140px;height:140px;">06/24/2015</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/plant_health/image07_2015_09_12.png" date="09/12/2015" alt="Image 1" style="width:140px;height:140px;">09/12/2015</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/plant_health/image08_2015_11_15.png" date="11/15/2015" alt="Image 1" style="width:140px;height:140px;">11/15/2015</a></li>  </ul>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a href="#">2016</a>
+                                              <ul class="dropdown-menu">
+                                                <li><input id = "btn2" type = "image" img src="data/plant_health/image09_2016_03_06.png" date="03/06/2016" alt="Image 1" style="width:140px;height:140px;">03/06/2016</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/plant_health/image10_2016_06_26.png" date="06/26/2016" alt="Image 1" style="width:140px;height:140px;">06/26/2016</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/plant_health/image11_2016_09_06.png" date="09/06/2016" alt="Image 1" style="width:140px;height:140px;">09/06/2016</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/plant_health/image12_2016_12_19.png" date="12/19/2016" alt="Image 1" style="width:140px;height:140px;">12/19/2016</a></li>  </ul>
+                                          </ul>
+                                        </li>
+                                        <li class="dropdown-submenu">
+                                          <a tabindex="-1" href="#">Flooded/Burned land</a>
+                                          <ul class="dropdown-menu">
+                                            <li class="dropdown-submenu">
+                                              <a href="#">2014</a>
+                                              <ul class="dropdown-menu">
+                                                <li><input id = "btn2" type = "image" img src="data/flood_burn/image01_2014_03_17.png" date="03/17/2014" alt="Image 1" style="width:140px;height:140px;">03/17/2014</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/flood_burn/image02_2014_08_24.png" date="08/24/2014" alt="Image 1" style="width:140px;height:140px;">08/24/2014</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/flood_burn/image03_2014_11_28.png" date="11/28/2014" alt="Image 1" style="width:140px;height:140px;">11/28/2014</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/flood_burn/image04_2014_12_30.png" date="12/30/2014" alt="Image 1" style="width:140px;height:140px;">12/30/2014</a></li>  </ul>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a href="#">2015</a>
+                                              <ul class="dropdown-menu">
+                                                <li><input id = "btn2" type = "image" img src="data/flood_burn/image05_2015_02_15.png" date="02/15/2015" alt="Image 1" style="width:140px;height:140px;">02/15/2015</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/flood_burn/image06_2015_06_24.png" date="06/24/2015" alt="Image 1" style="width:140px;height:140px;">06/24/2015</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/flood_burn/image07_2015_09_12.png" date="09/12/2015" alt="Image 1" style="width:140px;height:140px;">09/12/2015</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/flood_burn/image08_2015_11_15.png" date="11/15/2015" alt="Image 1" style="width:140px;height:140px;">11/15/2015</a></li>  </ul>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                              <a href="#">2016</a>
+                                              <ul class="dropdown-menu">
+                                                <li><input id = "btn2" type = "image" img src="data/flood_burn/image09_2016_03_06.png" date="03/06/2016" alt="Image 1" style="width:140px;height:140px;">03/06/2016</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/flood_burn/image10_2016_06_26.png" date="06/26/2016" alt="Image 1" style="width:140px;height:140px;">06/26/2016</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/flood_burn/image11_2016_09_06.png" date="09/06/2016" alt="Image 1" style="width:140px;height:140px;">09/06/2016</a></li>
+                                                <li><input id = "btn2" type = "image" img src="data/flood_burn/image12_2016_12_19.png" date="12/19/2016" alt="Image 1" style="width:140px;height:140px;">12/19/2016</a></li>  </ul>
+                                          </ul>
+
+
+                                      <li class="dropdown-submenu">
+                                      <a tabindex="-1" href="#">Snow/Ice/Clouds</a>
                                       <ul class="dropdown-menu">
                                         <li class="dropdown-submenu">
                                           <a href="#">2014</a>
                                           <ul class="dropdown-menu">
-                                            <li><input id = "btn2" type = "image" img src="data/rgb/image01_2014_03_17.png" alt="Image 1" style="width:140px;height:140px;">03/17/2014</a></li>
-                                            <li><input id = "btn2" type = "image" img src="data/rgb/image02_2014_08_24.png" alt="Image 1" style="width:140px;height:140px;">08/24/2014</a></li>
-                                            <li><input id = "btn2" type = "image" img src="data/rgb/image03_2014_11_28.png" alt="Image 1" style="width:140px;height:140px;">11/28/2014</a></li>
-                                            <li><input id = "btn2" type = "image" img src="data/rgb/image04_2014_12_30.png" alt="Image 1" style="width:140px;height:140px;">12/30/2014</a></li>  </ul>
+                                            <li><input id = "btn2" type = "image" img src="data/sic/image01_2014_03_17.png" date="03/17/2014" alt="Image 1" style="width:140px;height:140px;">03/17/2014</a></li>
+                                            <li><input id = "btn2" type = "image" img src="data/sic/image02_2014_08_24.png" date="08/24/2014" alt="Image 1" style="width:140px;height:140px;">08/24/2014</a></li>
+                                            <li><input id = "btn2" type = "image" img src="data/sic/image03_2014_11_28.png" date="11/28/2014" alt="Image 1" style="width:140px;height:140px;">11/28/2014</a></li>
+                                            <li><input id = "btn2" type = "image" img src="data/sic/image04_2014_12_30.png" date="12/30/2014" alt="Image 1" style="width:140px;height:140px;">12/30/2014</a></li>  </ul>
                                         </li>
                                         <li class="dropdown-submenu">
                                           <a href="#">2015</a>
-
+                                          <ul class="dropdown-menu">
+                                            <li><input id = "btn2" type = "image" img src="data/sic/image05_2015_02_15.png" date="02/15/2015" alt="Image 1" style="width:140px;height:140px;">02/15/2015</a></li>
+                                            <li><input id = "btn2" type = "image" img src="data/sic/image06_2015_06_24.png" date="06/24/2015" alt="Image 1" style="width:140px;height:140px;">06/24/2015</a></li>
+                                            <li><input id = "btn2" type = "image" img src="data/sic/image07_2015_09_12.png" date="09/12/2015" alt="Image 1" style="width:140px;height:140px;">09/12/2015</a></li>
+                                            <li><input id = "btn2" type = "image" img src="data/sic/image08_2015_11_15.png" date="11/15/2015" alt="Image 1" style="width:140px;height:140px;">11/15/2015</a></li>  </ul>
+                                        </li>
                                         <li class="dropdown-submenu">
                                           <a href="#">2016</a>
+                                          <ul class="dropdown-menu">
+                                            <li><input id = "btn2" type = "image" img src="data/sic/image09_2016_03_06.png" date="03/06/2016" alt="Image 1" style="width:140px;height:140px;">03/06/2016</a></li>
+                                            <li><input id = "btn2" type = "image" img src="data/sic/image10_2016_06_26.png" date="06/26/2016" alt="Image 1" style="width:140px;height:140px;">06/26/2016</a></li>
+                                            <li><input id = "btn2" type = "image" img src="data/sic/image11_2016_09_06.png" date="09/06/2016" alt="Image 1" style="width:140px;height:140px;">09/06/2016</a></li>
+                                            <li><input id = "btn2" type = "image" img src="data/sic/image12_2016_12_19.png" date="12/19/2016" alt="Image 1" style="width:140px;height:140px;">12/19/2016</a></li>  </ul>
                                       </ul>
                                     </li>
-                                  </ul>
+                                    </ul>
                               </div>
 
 
@@ -182,30 +438,41 @@
                     <script src="src/js/imgSystem.js"></script>
                   </div>
                   <div class="span3">
+                    <div style = "position: absolute;left:800px;">
+                      <!-- <a id="myBtn" role="button" class="btn btn-primary" style = "font-size:35px;width:300px;height:50px;">
+                          Image Options</a> -->
+                          <!-- Button trigger modal -->
+                          <!-- Trigger the modal with a button -->
+                          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Image Options</button>
+
+                        </div>
 
                     <div id="image-diff" class="drop-zone">
                       Diff will appear here.
                     </div>
+
                     <div id="thesame" style="display:none;">
                       <strong>These images are the same!</strong>
                     </div>
-                    <div id="diff-results" style="display:none;">
-                      <p>
+                    <div id="diff-results" style="display:none; color: #000;">
+                      <p style = "color:black;width:400px;left:">
                         <strong>The second image is <span id="mismatch"></span>% different compared to the first.
                         <span id="differentdimensions" style="display:none;">And they have different dimensions.</span></strong>
                       </p>
 
                     <br/>
-                    <div class="span3">
+                    <!-- <div class="span3">
                     <div id="option-buttons">
 
 
                     <div class="btn-group buttons" >
-                      <h5>Ignore:</h5>
+                      <h5 data-toggle="tooltip" data-placement="top" title="Choose how much tollerence there is in between the dif">
+                      Ignore:
+                    </h5>
                       <button  class="btn btn-primary" id="raw">Nothing</button>
-                      <button class="btn btn-primary active" id="less">Less</button>
+                      <button class="btn btn-primary" id="less">Less</button>
                       <button class="btn btn-primary" id="colors">Colors</button>
-                      <button class="btn btn-primary" id="antialising">Antialiasing</button>
+                      <button class="btn btn-primary active" id="antialising">Antialiasing</button>
                     </div>
 
                     <br/>
@@ -240,7 +507,7 @@
 
 
                   </div>
-                </div>
+                </div> -->
                 </div>
                 </div>
                 </div>
@@ -270,6 +537,7 @@
           </script>
 
 </div>
+<img src="data/vj.PNG" alt="vj" width="742">
 </div>
 </body>
 </html>

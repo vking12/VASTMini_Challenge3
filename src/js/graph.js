@@ -15,9 +15,13 @@ var canvas1 = document.querySelector("canvas#Canvas1"),
 var x = d3.scaleLinear().domain([0, 260]).rangeRound([0, widthgraph]),
     y = d3.scaleLinear().rangeRound([heightgraph, 0]);
 
+var x2 = d3.scaleLinear().domain([0, 260]).rangeRound([0, widthgraph]),
+    y2 = d3.scaleLinear().rangeRound([heightgraph, 0]);
+
 // select the SVG we created in HTML
 var svg1 = d3.select("svg#Svg1");
 var svg2 = d3.select("svg#Svg2");
+var svg3 = d3.select("svg#Svg3");
 
 var Graph1SVG = d3.select("div#Graph1").append("svg")
     .attr("width", widthgraph + margin.left + margin.right)
@@ -41,6 +45,17 @@ var Graph2SVG = d3.select("div#Graph2").append("svg")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
+var Graph3SVG = d3.select("div#Graph3").append("svg")
+    .attr("width", widthgraph + margin.left + margin.right)
+    .attr("height", heightgraph + margin.top + margin.bottom)
+    .style("background","white")
+    .style("border","1px solid green")
+    .attr("transform",
+          "translate(0,0)")
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
 
 
 
@@ -50,7 +65,7 @@ var Graph2SVG = d3.select("div#Graph2").append("svg")
           "translate(" + (widthgraph/2) + " ,-10)")
       .style("text-anchor", "middle")
       .style("font-size","20px")
-      .text("RGB histogram");
+      .text("Image 1 Histogram");
 
 // do nice formatting for the second svg
 //add the x Axis
@@ -104,7 +119,7 @@ var Graph2SVG = d3.select("div#Graph2").append("svg")
         .y(y);
 
     //set up the brushing feature ( i.e. the movable box)
-    var brush = d3.brush()
+    var brush1 = d3.brush()
         .on("start brush", brushed)
         .on("end", brushended);
 
@@ -121,6 +136,54 @@ var Graph2SVG = d3.select("div#Graph2").append("svg")
     .data([r, g, b])
     .enter().append("path")
     .attr("class", function(d, i) { return "histogram-line histogram-" + "rgb"[i]; });
+
+// make the same things now for the other histogram :)
+
+
+
+
+
+    // store the three RGB values that come from using the brushing
+    var r2 = new Array(257),
+        g2 = new Array(257),
+        b2 = new Array(257);
+
+    // specify the area of the graph
+    var area2 = d3.area()
+        .curve(d3.curveStepAfter)
+        .x(function(d, i) { return x(i); })
+        .y0(y(0))
+        .y1(y);
+
+    //sepcify the line of the graph
+    var line2 = d3.line()
+        .curve(curveStepBelow2)
+        .x(function(d, i) { return x(i); })
+        .y(y);
+
+    //set up the brushing feature ( i.e. the movable box)
+    var brush2 = d3.brush()
+        .on("start brush", brushed2)
+        .on("end", brushended2);
+
+  // set up the histogram in the second svg view
+    var histogram2 = Graph2SVG.append("g")
+        .attr("class", "histogram");
+
+    var histoarea2 = histogram2.selectAll(".histogram-area2")
+    .data([r2, g2, b2])
+    .enter().append("path")
+    .attr("class", function(d, i) { return "histogram-area2 histogram-" + "rgb"[i]; });
+
+    var histoline2 = histogram2.selectAll(".histogram-line2")
+    .data([r2, g2, b2])
+    .enter().append("path")
+    .attr("class", function(d, i) { return "histogram-line2 histogram-" + "rgb"[i]; });
+
+
+
+
+
 
 // add the X gridlines
   Graph1SVG.append("g")
@@ -146,7 +209,7 @@ var Graph2SVG = d3.select("div#Graph2").append("svg")
             "translate(" + (widthgraph/2) + " ,-10)")
         .style("text-anchor", "middle")
         .style("font-size","20px")
-        .text("RGB histogram");
+        .text("Image 2 Histogram");
 // do nice formatting for the second svg
 //add the x Axis
       Graph2SVG.append("g")
@@ -192,6 +255,64 @@ var Graph2SVG = d3.select("div#Graph2").append("svg")
         .tickSize(-250)
         .tickFormat("")) // make sure it doesn't print the labels again
 
+
+
+// ------------------- third histogram --------------------------------------
+
+
+// text label for the whole graph
+Graph3SVG.append("text")
+.attr("transform",
+    "translate(" + (widthgraph/2) + " ,-10)")
+.style("text-anchor", "middle")
+.style("font-size","20px")
+.text("Image 3 Histogram");
+// do nice formatting for the second svg
+//add the x Axis
+Graph3SVG.append("g")
+  .attr("transform",
+      "translate(" + 0 + " ," + (heightgraph ) + ")")
+  .call(d3.axisBottom(x).ticks(5));
+
+// text label for the x axis
+Graph3SVG.append("text")
+  .attr("transform",
+      "translate(" + (widthgraph/2) + " ," + (heightgraph + 30) + ")")
+  .style("text-anchor", "middle")
+  .style("font-size","16px")
+  .text("RGB Value");
+
+// add the y Axis
+Graph3SVG.append("g")
+    .call(d3.axisLeft(y).ticks(5));
+
+// text label for the y axis
+Graph3SVG.append("text")
+.attr("transform", "rotate(-90)")
+.attr("y", -42 )
+.attr("x",-110 )
+.attr("dy", "1em")
+.style("text-anchor", "middle")
+.style("font-size","16px")
+.text("Intensity");
+
+
+// add the X gridlines
+Graph3SVG.append("g")
+.attr("class", "grid")
+.attr("transform", "translate(0," + heightgraph + ")")
+.call(make_x_gridlines()
+.tickSize(-250)
+.tickFormat(""))
+
+// add the Y gridlines
+Graph3SVG.append("g")
+.attr("class", "grid")
+.call(make_y_gridlines()
+.tickSize(-250)
+.tickFormat("")) // make sure it doesn't print the labels again
+
+
 // ----------------------- get the images set up
 
 var image1 = new Image;
@@ -205,6 +326,44 @@ image1.onload = loaded1;
 image2.crossOrigin = "";
 image2.src = "data/rgb/image04_2014_12_30.png"; // starting out picture
 image2.onload = loaded2;
+
+
+// making the zoomed in views locations
+
+
+var zoom1 = d3.select("div#Zoom1").append("svg")
+    .attr("width", widthgraph + margin.left + margin.right)
+    .attr("height", heightgraph + margin.top + margin.bottom)
+    .style("background","white")
+    .style("border","5px solid black")
+    .attr("transform",
+          "translate(0,0)")
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+var zoom2 = d3.select("div#Zoom2").append("svg")
+    .attr("width", widthgraph + margin.left + margin.right)
+    .attr("height", heightgraph + margin.top + margin.bottom)
+    .style("background","white")
+    .style("border","5px solid black")
+    .attr("transform",
+          "translate(0,0)")
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+var zoom3 = d3.select("div#Zoom3").append("svg")
+    .attr("width", widthgraph + margin.left + margin.right)
+    .attr("height", heightgraph + margin.top + margin.bottom)
+    .style("background","white")
+    .style("border","5px solid black")
+    .attr("transform",
+          "translate(0,0)")
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
 
 
 // --------------------brushing functions-----------------------
@@ -253,6 +412,57 @@ function curveStepBelow(context) {
       x -= y0 < y ? -0.5 : +0.5, y += 0.5;
       if (++i === 1) context.moveTo(x, y0 = y);
       else context.lineTo(x, y0), context.lineTo(x, y0 = y);
+    }
+  };
+}
+
+
+// --------------------brushing functions for the other view-----------------------
+function brushed2() {
+  var s = d3.event.selection,
+      x20 = s[0][0],
+      y20 = s[0][1],
+      dx2 = s[1][0] - x20,
+      dy2 = s[1][1] - y20,
+      max2 = 0;
+
+  for (var i = 0; i < 257; ++i) {
+    r2[i] = g2[i] = b2[i] = 0;
+  }
+
+  if (dx2 && dy2) {
+    var data2 = context2.getImageData(x20, y20, dx2, dy2).data;
+    for (var i = 0; i < dx2; ++i) {
+      for (var j = 0; j < dy2; ++j) {
+        var k = j * dx2 + i << 2;
+        max2 = Math.max(max2, ++r[data2[k]], ++g[data2[k + 1]], ++b[data2[k + 2]]);
+      }
+    }
+    y2.domain([0, max2]);
+    histoarea2.attr("d", area);
+    histoline2.attr("d", line);
+  } else {
+    histoarea2.attr("d", null);
+    histoline2.attr("d", null);
+  }
+}
+
+function brushended2() {
+  if (!d3.event.selection) {
+    histoarea2.attr("d", null);
+    histoline2.attr("d", null);
+  }
+}
+
+function curveStepBelow2(context2) {
+  var y01, i1;
+  return {
+    lineStart: function() { y01 = 0, i1 = 0; },
+    lineEnd: function() {},
+    point: function(x1, y1) {
+      x1 -= y01 < y1 ? -0.5 : +0.5, y += 0.5;
+      if (++i1 === 1) context.moveTo(x1, y01 = y1);
+      else context2.lineTo(x1, y01), context2.lineTo(x1, y01 = y1);
     }
   };
 }

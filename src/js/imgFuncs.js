@@ -13,23 +13,26 @@ function changeImage(path,location) {
 }
 
 function loaded1() {
-  context1.drawImage(this, 0, 0,331,331);
+  context1.drawImage(this, 0, 0);
 
   svg1.append("g")
       .attr("class", "brush")
-      .call(brush)
-      .call(brush.move, [[30, 16], [211, 139]]);
+      .call(brush1)
+      .call(brush1.move, [[30, 16], [211, 139]]);
 }
 
 function loaded2() {
-  context2.drawImage(this, 0, 0,351,351);
+  context2.drawImage(this, 0, 0);
 
-
+  svg2.append("g")
+      .attr("class", "brush")
+      .call(brush2)
+      .call(brush2.move, [[30, 16], [211, 139]]);
 }
 
 function newloaded() {
 
-  mycontext.drawImage(this, 0, 0,351,351);
+  mycontext.drawImage(this, 0, 0);
 }
 
 // ---------------------------- making grid functons ------------------------------------

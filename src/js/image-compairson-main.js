@@ -202,14 +202,14 @@ $(function(){
 		var done = $.Deferred();
 		var dtwo = $.Deferred();
 
-		xhr.open('GET', 'data/BoonsongLakeNoLine.jpg', true);
+		xhr.open('GET', 'data/rgb/image01_2014_03_17.png', true);
 		xhr.responseType = 'blob';
 		xhr.onload = function(e) {
 			done.resolve(this.response);
 		};
 		xhr.send();
 
-		xhr2.open('GET', 'data/BoonsongLakeOG.jpg', true);
+		xhr2.open('GET', 'data/rgb/image04_2014_12_30.png', true);
 		xhr2.responseType = 'blob';
 		xhr2.onload = function(e) {
 			dtwo.resolve(this.response);
@@ -223,8 +223,10 @@ $(function(){
 				let file = $(this).attr("src");
 				// figure out if this is button 1 or 2
 				let button =  $(this).attr("id");
+				let year = d3.select(this).attr("date");
 				if(button == "btn1")
 				{
+					  d3.select("#myDate").text(year);
 					  changeImage(file,"Canvas1");
 						file1 = file;
 
@@ -233,6 +235,7 @@ $(function(){
 						}
 					}
 					else {
+						d3.select("#myOtherDate").text(year);
 						changeImage(file,"Canvas2");
 				file2 = file;
 				if(file1){
@@ -245,19 +248,19 @@ $(function(){
 
 
 
-		$('#example-images').click(function(){
-
-			$('#dropzone1').html('<img src="data/BoonsongLakeNoLine.jpg"/>');
-			$('#dropzone2').html('<img src="data/BoonsongLakeOG.jpg"/>');
-
+		$(document).ready(function(){
+				file1 = 'data/rgb/image01_2014_03_17.png'
+				file2 = 'data/rgb/image04_2014_12_30.png'
 			$.when(done, dtwo).done(function(file, file1){
 				if (typeof FileReader === 'undefined') {
-					resembleControl = resemble('data/BoonsongLakeNoLine.jpg').compareTo('data/BoonsongLakeOG.jpg').onComplete(onComplete);
+					resembleControl = resemble(file1).compareTo(file2).onComplete(onComplete);
+
 				} else {
 					resembleControl = resemble(file).compareTo(file1).onComplete(onComplete);
+					resembleControl.ignoreAntialiasing();
+					resembleControl.repaint();
 				}
 			});
-
 			return false;
 		});
 
