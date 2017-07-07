@@ -28,6 +28,11 @@ function loaded2() {
       .attr("class", "brush")
       .call(brush2)
       .call(brush2.move, [[30, 16], [211, 139]]);
+
+      svg3.append("g")
+          .attr("class", "brush")
+          .call(brush2)
+          .call(brush2.move, [[30, 16], [211, 139]]);
 }
 
 function newloaded() {
