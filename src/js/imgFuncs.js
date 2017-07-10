@@ -13,7 +13,7 @@ function changeImage(path,location) {
 }
 
 function loaded1() {
-  context1.drawImage(this, 0, 0);
+  context1.drawImage(this, 0, 0,331,331);
 
   svg1.append("g")
       .attr("class", "brush")
@@ -22,7 +22,7 @@ function loaded1() {
 }
 
 function loaded2() {
-  context2.drawImage(this, 0, 0);
+  context2.drawImage(this, 0, 0,331,331);
 
   svg2.append("g")
       .attr("class", "brush")
@@ -37,7 +37,7 @@ function loaded2() {
 
 function newloaded() {
 
-  mycontext.drawImage(this, 0, 0);
+  mycontext.drawImage(this, 0, 0,331,331);
 }
 
 // ---------------------------- making grid functons ------------------------------------
