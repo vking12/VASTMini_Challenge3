@@ -38,11 +38,8 @@
     <script src="src/js/imgFuncs.js"></script>
 
     <title>Mini Challenge 3</title>
+    <script src="src/js/histogram.js"></script>
     <script src="src/js/graph.js"></script>
-    <script src="src/js/imgSystem.js"></script>
-
-
-
 
     <div id="title">
               <h1 style="color: #000">Mini-Challange 3</h1>
@@ -89,10 +86,10 @@
 
                       <div class="btn-group buttons" >
                         <h5>Difference:</h5>
-                        <button class="btn btn-primary active" id="flat">Flat</button>
+                        <button class="btn btn-primary" id="flat">Flat</button>
                         <button class="btn btn-primary" id="movement">Movement</button>
                         <button class="btn btn-primary" id="flatDifferenceIntensity">Flat + diff intensity</button>
-                        <button class="btn btn-primary" id="movementDifferenceIntensity">Movement + diff intensity</button>
+                        <button class="btn btn-primary activef" id="movementDifferenceIntensity">Movement + diff intensity</button>
                       </div>
                       <br/>
                       <br/>
@@ -417,6 +414,7 @@
                                         <li class="dropdown-submenu">
                                           <a href="#">2016</a>
                                           <ul class="dropdown-menu">
+
                                             <li><input id = "btn2" type = "image" img src="data/sic/image09_2016_03_06.png" date="03/06/2016" alt="Image 1" style="width:140px;height:140px;">03/06/2016</a></li>
                                             <li><input id = "btn2" type = "image" img src="data/sic/image10_2016_06_26.png" date="06/26/2016" alt="Image 1" style="width:140px;height:140px;">06/26/2016</a></li>
                                             <li><input id = "btn2" type = "image" img src="data/sic/image11_2016_09_06.png" date="09/06/2016" alt="Image 1" style="width:140px;height:140px;">09/06/2016</a></li>
@@ -432,26 +430,16 @@
                     </div>
                     <canvas id ="Canvas2" width="331" height="331"></canvas>
                     <svg id = "Svg2" width="331" height="331"></svg>
-
-
                   </div>
                   <div class="span3">
                     <div style = "position: absolute;left:800px;">
-                      <!-- <a id="myBtn" role="button" class="btn btn-primary" style = "font-size:35px;width:300px;height:50px;">
-                          Image Options</a> -->
-                          <!-- Button trigger modal -->
-                          <!-- Trigger the modal with a button -->
                           <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Image Options</button>
-
                         </div>
 
                     <div id="image-diff" class="drop-zone">
                       Diff will appear here.
                     </div>
                     <svg id = "Svg3" width="331" height="331"></svg>
-                    <script src="src/js/brushing.js"></script>
-                    <script src="src/js/graph.js"></script>
-                    <script src="src/js/imgSystem.js"></script>
                     <div id="thesame" style="display:none;">
                       <strong>These images are the same!</strong>
                     </div>
@@ -462,53 +450,6 @@
                       </p>
 
                     <br/>
-                    <!-- <div class="span3">
-                    <div id="option-buttons">
-
-
-                    <div class="btn-group buttons" >
-                      <h5 data-toggle="tooltip" data-placement="top" title="Choose how much tollerence there is in between the dif">
-                      Ignore:
-                    </h5>
-                      <button  class="btn btn-primary" id="raw">Nothing</button>
-                      <button class="btn btn-primary" id="less">Less</button>
-                      <button class="btn btn-primary" id="colors">Colors</button>
-                      <button class="btn btn-primary active" id="antialising">Antialiasing</button>
-                    </div>
-
-                    <br/>
-                    <br/>
-                    <div class="btn-group buttons" >
-                      <h5>Color:</h5>
-                      <button class="btn btn-primary active" id="pink">Pink</button>
-                      <button class="btn btn-primary" id="yellow">Yellow</button>
-                    </div>
-                    <br/>
-                    <br/>
-
-                    <div class="btn-group buttons" >
-                      <h5>Difference:</h5>
-                      <button class="btn btn-primary active" id="flat">Flat</button>
-                      <button class="btn btn-primary" id="movement">Movement</button>
-                      <button class="btn btn-primary" id="flatDifferenceIntensity">Flat + diff intensity</button>
-                      <button class="btn btn-primary" id="movementDifferenceIntensity">Movement + diff intensity</button>
-                    </div>
-                    <br/>
-                    <br/>
-
-                    <div class="btn-group buttons" >
-                      <h5>Opacity:</h5>
-                      <button class="btn btn-primary active" id="opaque">Opaque</button>
-                      <button class="btn btn-primary" id="transparent">Transparent</button>
-                    </div>
-
-                    <br/>
-                    <br/>
-
-
-
-                  </div>
-                </div> -->
                 </div>
                 </div>
                 </div>
