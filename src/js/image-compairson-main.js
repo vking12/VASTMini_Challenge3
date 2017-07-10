@@ -78,6 +78,7 @@ $(function(){
 			$('#diff-results').show();
 			$('#thesame').hide();
 		}
+		startGraph();
 	}
 
 	var file1;
@@ -247,8 +248,10 @@ $(function(){
 
 
 
-
+ // when we start out, load these two images.
 		$(document).ready(function(){
+
+
 				file1 = 'data/rgb/image01_2014_03_17.png'
 				file2 = 'data/rgb/image04_2014_12_30.png'
 			$.when(done, dtwo).done(function(file, file1){
@@ -258,10 +261,20 @@ $(function(){
 				} else {
 					resembleControl = resemble(file).compareTo(file1).onComplete(onComplete);
 					resembleControl.ignoreAntialiasing();
+					resemble.outputSettings({
+						errorType: 'movementDifferenceIntensity'
+					});
 					resembleControl.repaint();
 				}
+				// startGraph();
 			});
+
+
 			return false;
+
+
+
+
 		});
 
 	}());
