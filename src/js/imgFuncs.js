@@ -14,3 +14,33 @@ function newloaded() {
 
   mycontext.drawImage(this, 0, 0,331,331);
 }
+
+function makeGraphLayout(GraphSVG)
+{
+  var graph = d3.select(GraphSVG).append("svg")
+      .attr("width", widthgraph + margin.left + margin.right)
+      .attr("height", heightgraph + margin.top + margin.bottom)
+      .style("background","white")
+      .style("border","1px solid green")
+      .attr("transform",
+            "translate(0,0)")
+    .append("g")
+      .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")");
+   return graph;
+}
+
+function makeZoomLayout(ZoomSVG)
+{
+  var zoom = d3.select(ZoomSVG).append("svg")
+      .attr("width", widthgraph + margin.left + margin.right)
+      .attr("height", heightgraph + margin.top + margin.bottom)
+      .style("background","white")
+      .style("border","5px solid black")
+      .attr("transform",
+            "translate(0,0)")
+    .append("g")
+      .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")");
+   return zoom;
+}

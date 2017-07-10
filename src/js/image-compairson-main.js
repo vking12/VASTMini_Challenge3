@@ -78,7 +78,7 @@ $(function(){
 			$('#diff-results').show();
 			$('#thesame').hide();
 		}
-		startGraph();
+		startGraph(); // after everything has been loaded for the image manipulation, start loading the graphs/brushing
 	}
 
 	var file1;
@@ -101,7 +101,7 @@ $(function(){
 	});
 
 	var buttons = $('.buttons button');
-
+ // keep track of what the buttons do
 	buttons.click(function(){
 		var $this = $(this);
 
@@ -245,13 +245,8 @@ $(function(){
 				}
 			});
 
-
-
-
  // when we start out, load these two images.
 		$(document).ready(function(){
-
-
 				file1 = 'data/rgb/image01_2014_03_17.png'
 				file2 = 'data/rgb/image04_2014_12_30.png'
 			$.when(done, dtwo).done(function(file, file1){
@@ -266,15 +261,8 @@ $(function(){
 					});
 					resembleControl.repaint();
 				}
-				// startGraph();
 			});
-
-
 			return false;
-
-
-
-
 		});
 
 	}());

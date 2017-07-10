@@ -1,4 +1,4 @@
-function makeHistogram(GraphSVG,svg,imageLocation,context){
+function makeHistogram(GraphSVG,svg,imageLocation,context,title){
   var r = new Array(257),
       g = new Array(257),
       b = new Array(257);
@@ -56,7 +56,7 @@ function makeHistogram(GraphSVG,svg,imageLocation,context){
             "translate(" + (widthgraph/2) + " ,-10)")
         .style("text-anchor", "middle")
         .style("font-size","20px")
-        .text("Image 1 Histogram");
+        .text(title);
 
 
   //add the x Axis
@@ -153,7 +153,6 @@ function makeHistogram(GraphSVG,svg,imageLocation,context){
   }
 
   // ---------------------------- making grid functons ------------------------------------
-
       // gridlines in x axis function
       function make_x_gridlines() {
         return d3.axisBottom(x)
