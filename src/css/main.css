@@ -5,6 +5,34 @@
   stroke-dasharray: 4,4;
 }
 
+.histogram {
+  isolation: isolate;
+}
+
+.histogram-area {
+  mix-blend-mode: screen;
+}
+
+.histogram-area.histogram-r {
+  fill: #f00;
+}
+
+.histogram-area.histogram-g {
+  fill: #0f0;
+}
+
+.histogram-area.histogram-b {
+  fill: #00f;
+}
+
+.histogram-line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+
+
 #my-histogram{
   position: absolute;
   top: -341px;
@@ -75,73 +103,6 @@ margin-top: 1px !important;
 margin-bottom:1px !important;
 margin-left:30px !important;
 
-}
-/*
-the fallwoing is to style the slider */
-
-.histogram {
-  isolation: isolate;
-}
-
-.histogram-area {
-  mix-blend-mode: screen;
-}
-
-.histogram-area.histogram-r {
-  fill: #f00;
-}
-
-.histogram-area.histogram-g {
-  fill: #0f0;
-}
-
-.histogram-area.histogram-b {
-  fill: #00f;
-}
-
-.histogram-line {
-  fill: none;
-  stroke: #AAA;
-  shape-rendering: crispEdges;
-}
-
-
-.histogram2 {
-  isolation: isolate;
-}
-
-.histogram2-area {
-  mix-blend-mode: screen;
-}
-
-.histogram2-area2.histogram-r {
-  fill: #f00;
-}
-
-.histogram2-area.histogram-g {
-  fill: #0f0;
-}
-
-.histogram2-area.histogram-b {
-  fill: #00f;
-}
-
-.histogram2-line {
-  fill: none;
-  stroke: #AAA;
-  shape-rendering: crispEdges;
-}
-
-
-
-.brush .extent {
-  fill-opacity: .3;
-  shape-rendering: crispEdges;
-}
-
-.brush2 .extent {
-  fill-opacity: .3;
-  shape-rendering: crispEdges;
 }
 
 main {
