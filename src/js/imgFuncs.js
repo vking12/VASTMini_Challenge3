@@ -1,5 +1,5 @@
 var mycanvas,mycontext; // when changing images, use a different conext/canvas selector
-
+var thecanvas,thecontext;
 //get an image from the "Original" menu
 function changeImage(path,location) {
   var image = new Image;
@@ -14,6 +14,14 @@ function newloaded() {
 
   mycontext.drawImage(this, 0, 0,331,331);
 }
+
+function loadZoom() {
+
+  thecontext.drawImage(this, 0, 0,331,331);
+}
+
+
+
 
 function makeGraphLayout(GraphSVG)
 {
@@ -30,17 +38,15 @@ function makeGraphLayout(GraphSVG)
    return graph;
 }
 
-function makeZoomLayout(ZoomSVG)
+function makeZoomLayout(picPath,ZoomSVG)
 {
-  var zoom = d3.select(ZoomSVG).append("svg")
-      .attr("width", widthgraph + margin.left + margin.right)
-      .attr("height", heightgraph + margin.top + margin.bottom)
-      .style("background","white")
-      .style("border","5px solid black")
-      .attr("transform",
-            "translate(0,0)")
-    .append("g")
-      .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")");
-   return zoom;
+  let svgName = "canvas#Zoom" + ZoomSVG;
+
+  let theimage = new Image;
+  thecanvas = document.querySelector(svgName);
+  thecontext = thecanvas.getContext("2d");
+  theimage.src = picPath;
+  theimage.load = loadZoom;
+  return thecanvas;
+
 }

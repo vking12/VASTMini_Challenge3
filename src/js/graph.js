@@ -37,8 +37,8 @@ makeHistogram(Graph3SVG,svg3,imageDif,context3,"Comparison Image");
 
 // making the zoomed in views locations
 
-var zoom1 = makeZoomLayout("div#Zoom1");
-var zoom2 = makeZoomLayout("div#Zoom2");
-var zoom3 = makeZoomLayout("div#Zoom3");
+var zoom1 = makeZoomLayout("data/rgb/image04_2014_12_30.png",1);
+// var zoom2 = makeZoomLayout("data/rgb/image01_2014_03_17.png",2);
+// var zoom3 = makeZoomLayout(imageDif,3);
 
 }
