@@ -12,119 +12,41 @@
   left: 10px;
 }
 
-#container{
-  position: absolute;
-
-}
-
-#Graph1{
-  position: absolute;
-  left: 1200px;
-}
-
-
-#Graph2{
-  position: absolute;
-  top: 360px;
-  left: 1200px;
-}
-
-#Graph3{
-  position: absolute;
-  top: 720px;
-  left: 1200px;
-}
-
-#Zoom1{
-  position: absolute;
-  left: 1550px;
-}
-
-
-#Zoom2{
-  position: absolute;
-  top: 360px;
-  left: 1550px;
-}
-
-#Zoom3{
-  position: absolute;
-  top: 720px;
-  left: 1550px;
-}
-
-
-
-#Svg1
-{
-  position: absolute;
-  top: -30px;
-  left:0px;
-}
-
-#Svg2
-{
-  position: absolute;
-  top: 65px;
-  left: 410px;
-}
-
-#Svg3
-{
-  position: absolute;
-  top: 65px;
-  left: 800px;
-}
-
 #Canvas1{
-  position: absolute;
-  top: -30px;
-  left: 0px;
+  position:absolute;
+  top: 81px;
+  left:25px;
+}
+
+#Svg1{
+  position:absolute;
+  top: 81px;
+  left:25px;
 }
 
 #Canvas2{
-  position: absolute;
-  top: 65px;
-  left: 410px;
+  position:absolute;
+  top: 494px;
+  left:25px;
 }
+
+#Svg2{
+  position:absolute;
+  top: 496px;
+  left:25px;
+}
+
 
 #Canvas3{
-  position: absolute;
-  top: 0px;
-  left: 790px;
+  position:absolute;
+  top: 908px;
+  left:25px;
 }
 
-
-#diff-results{
-  position: absolute;
-  top: 440px;
-  left: 750px;
-  width: 400px;
-  height: 400px;
-}
-
-#option-buttons{
-  position: absolute;
-
-  top: 80px;
-  left: 0px;
-}
-
-
-
-#image-comparison-div {
-  position: absolute;
-  top:  0px;
-  left: 12px;
-}
-
-#thesame{
-  position: absolute;
-  top:  15px;
-  left: 800px;
-  width: 400px;
-  height: 400px;
-  color: #00590c;
+#Svg3{
+  position:absolute;
+  top: 908px;
+  left:25px;
 }
 
 

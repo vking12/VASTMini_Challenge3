@@ -1,3 +1,5 @@
+var loaded = false;
+
 $(function(){
 	var $target = $('#dropzone1');
 
@@ -78,7 +80,11 @@ $(function(){
 			$('#diff-results').show();
 			$('#thesame').hide();
 		}
-		startGraph(); // after everything has been loaded for the image manipulation, start loading the graphs/brushing
+		if(!loaded)
+		{startGraph(); // after everything has been loaded for the image manipulation, start loading the graphs/brushing
+			loaded = true;
+		}
+
 	}
 
 	var file1;

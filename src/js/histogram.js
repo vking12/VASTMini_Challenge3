@@ -124,6 +124,7 @@ function makeHistogram(GraphSVG,svg,imageLocation,context,title){
         }
       }
       y.domain([0, max]);
+
       histoarea.attr("d", area);
       histoline.attr("d", line);
     } else {

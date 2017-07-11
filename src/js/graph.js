@@ -7,7 +7,7 @@ var svg1,svg2,svg3;
 
 //set up scales for the graph to show RGB values
 var x = d3.scaleLinear().domain([0, 260]).rangeRound([0, widthgraph]),
-y = d3.scaleLinear().rangeRound([heightgraph, 0]);
+y = d3.scaleLinear().domain([0,1]).rangeRound([heightgraph, 0]);
 
 function startGraph()
 {
