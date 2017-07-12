@@ -222,7 +222,7 @@ $(function(){
 		};
 		xhr.send();
 
-		xhr2.open('GET', 'data/rgb/image04_2014_12_30.png', true);
+		xhr2.open('GET', 'data/rgb/image01_2014_03_17.png', true);
 		xhr2.responseType = 'blob';
 		xhr2.onload = function(e) {
 			dtwo.resolve(this.response);
@@ -260,7 +260,7 @@ $(function(){
  // when we start out, load these two images.
 		$(document).ready(function(){
 				file1 = 'data/rgb/image01_2014_03_17.png'
-				file2 = 'data/rgb/image04_2014_12_30.png'
+				file2 = 'data/rgb/image01_2014_03_17.png'
 			$.when(done, dtwo).done(function(file, file1){
 				if (typeof FileReader === 'undefined') {
 					resembleControl = resemble(file1).compareTo(file2).onComplete(onComplete);

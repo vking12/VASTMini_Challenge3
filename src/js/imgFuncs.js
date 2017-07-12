@@ -109,7 +109,6 @@ function makeGraphLayout(GraphSVG)
       .attr("width", widthgraph + margin.left + margin.right)
       .attr("height", heightgraph + margin.top + margin.bottom)
       .style("background","white")
-      .style("border","1px solid green")
       .attr("transform",
             "translate(0,0)")
     .append("g")

@@ -43,13 +43,13 @@ var Graph1SVG = makeGraphLayout("div#Graph1");
 var Graph2SVG = makeGraphLayout("div#Graph2");
 var Graph3SVG = makeGraphLayout("div#Graph3");
 
-makeHistogram(Graph1SVG,svg1,"data/rgb/image04_2014_12_30.png",context1,"Image 1");
+makeHistogram(Graph1SVG,svg1,"data/rgb/image01_2014_03_17.png",context1,"Image 1");
 makeHistogram(Graph2SVG,svg2,"data/rgb/image01_2014_03_17.png",context2,"Image 2");
 var imageDif = d3.select("#image-diff").select("img").attr("src");
 makeHistogram(Graph3SVG,svg3,imageDif,context3,"Comparison Image");
 
 // making the zoomed in views locations
-makeZoomLayout("data/rgb/image04_2014_12_30.png","data/rgb/image01_2014_03_17.png",imageDif);
+makeZoomLayout("data/rgb/image01_2014_03_17.png","data/rgb/image01_2014_03_17.png",imageDif);
 
 
 }
