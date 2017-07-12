@@ -1,5 +1,5 @@
 
-
+var myS;
 var brush1,brush2,brush3;
 
 function makeHistogram(GraphSVG,svg,imageLocation,context,title){
@@ -133,7 +133,7 @@ function makeHistogram(GraphSVG,svg,imageLocation,context,title){
         dx = s[1][0] - x0,
         dy = s[1][1] - y0,
         max = 0;
-
+    myS = s;
 
     for (var i = 0; i < 257; ++i) {
       r[i] = g[i] = b[i] = 0;
@@ -164,6 +164,7 @@ function makeHistogram(GraphSVG,svg,imageLocation,context,title){
       histoline.attr("d", null);
     }
 
+    moveZoom(myS[0][0],myS[0][1],myS[1][0],myS[1][1]);
 
   }
 
