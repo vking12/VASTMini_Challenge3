@@ -48,6 +48,36 @@ var imgSystem = function() {
   //   }
   // }
 
+  self.loadImg = function(file, wCanvas, vImage, fLeft) {
+    var imgPath = file.slice(5,23);;
+    if (vImage === 'rgb') {
+      imgPath = 'data/' + 'rgb/' + imgPath + '.png';
+    } else if (vImage === 'plantH') {
+      imgPath = 'data/' + 'plant_health/' + imgPath + '.png';
+    } else if (vImage === 'floodB') {
+      imgPath = 'data/' + 'flood_burn/' + imgPath + '.png';
+    } else if (vImage === 'sic') {
+      imgPath = 'data/' + 'sic/' + imgPath + '.png';
+    }
+    //alert(imgPath);
+
+    var img = new Image();
+    img.src = imgPath;
+    var canvas = document.getElementById(wCanvas);
+    var ctx = canvas.getContext('2d');
+    img.onload = function() {
+      ctx.drawImage(img, 0, 0, 331, 331);
+      canvas.style.visibility = 'visible';
+
+      if (fLeft === 0){
+        var l = Ladda.create( document.querySelector( '.ladda-button' ) );
+        l.stop();
+      }
+    };
+
+
+  };
+
   self.createImg = function(wCanvas, fLeft) {
     var canvas = document.getElementById(wCanvas);
     var ctx = canvas.getContext('2d');
@@ -158,6 +188,11 @@ var imgSystem = function() {
     // load the data and setup the system
     initialize: function(file, wCanvas, vImage, fLeft) {
       self.loadData(file, wCanvas, vImage, fLeft);
+    },
+
+    // simply load the images
+    loadImage: function(file, wCanvas, vImage, fLeft) {
+      self.loadImg(file, wCanvas, vImage, fLeft);
     }
   };
   return publiclyAvailable;

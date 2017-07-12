@@ -82,51 +82,51 @@ function cLogic() {
 
   while (framesLeft != 0) {
     if (m14) {
-      img[framesLeft-1].initialize('data/CSV/image01_2014_03_17.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
+      img[framesLeft-1].loadImage('data/image01_2014_03_17.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
       document.getElementById(desc[framesLeft-1]).innerHTML = "<kbd>Mar 17th, 2014</kbd>";
       m14 = false;
     } else if (a14) {
-      img[framesLeft-1].initialize('data/CSV/image02_2014_08_24.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
+      img[framesLeft-1].loadImage('data/image02_2014_08_24.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
       document.getElementById(desc[framesLeft-1]).innerHTML = "<kbd>Aug 24th, 2014</kbd>";
       a14 = false;
     } else if (n14) {
-      img[framesLeft-1].initialize('data/CSV/image03_2014_11_28.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
+      img[framesLeft-1].loadImage('data/image03_2014_11_28.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
       document.getElementById(desc[framesLeft-1]).innerHTML = "<kbd>Nov 28th, 2014</kbd>";
       n14 = false;
     } else if (d14) {
-      img[framesLeft-1].initialize('data/CSV/image04_2014_12_30.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
+      img[framesLeft-1].loadImage('data/image04_2014_12_30.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
       document.getElementById(desc[framesLeft-1]).innerHTML = "<kbd>Dec 30th, 2014</kbd>";
       d14 = false;
     } else if (f15) {
-      img[framesLeft-1].initialize('data/CSV/image05_2015_02_15.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
+      img[framesLeft-1].loadImage('data/image05_2015_02_15.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
       document.getElementById(desc[framesLeft-1]).innerHTML = "<kbd>Feb 15th, 2015</kbd>";
       f15 = false;
     } else if (j15) {
-      img[framesLeft-1].initialize('data/CSV/image06_2015_06_24.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
+      img[framesLeft-1].loadImage('data/image06_2015_06_24.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
       document.getElementById(desc[framesLeft-1]).innerHTML = "<kbd>Jun 24th, 2015</kbd>";
       j15 = false;
     } else if (s15) {
-      img[framesLeft-1].initialize('data/CSV/image07_2015_09_12.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
+      img[framesLeft-1].loadImage('data/image07_2015_09_12.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
       document.getElementById(desc[framesLeft-1]).innerHTML = "<kbd>Sep 12th, 2015</kbd>";
       s15 = false;
     } else if (n15) {
-      img[framesLeft-1].initialize('data/CSV/image08_2015_11_15.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
+      img[framesLeft-1].loadImage('data/image08_2015_11_15.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
       document.getElementById(desc[framesLeft-1]).innerHTML = "<kbd>Nov 15th, 2015</kbd>";
       n15 = false;
     } else if (m16) {
-      img[framesLeft-1].initialize('data/CSV/image09_2016_03_06.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
+      img[framesLeft-1].loadImage('data/image09_2016_03_06.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
       document.getElementById(desc[framesLeft-1]).innerHTML = "<kbd>Mar 6th, 2016</kbd>";
       m16 = false;
     } else if (j16) {
-      img[framesLeft-1].initialize('data/CSV/image10_2016_06_26.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
+      img[framesLeft-1].loadImage('data/image10_2016_06_26.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
       document.getElementById(desc[framesLeft-1]).innerHTML = "<kbd>Jun 26th, 2016</kbd>";
       j16 = false;
     } else if (s16) {
-      img[framesLeft-1].initialize('data/CSV/image11_2016_09_06.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
+      img[framesLeft-1].loadImage('data/image11_2016_09_06.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
       document.getElementById(desc[framesLeft-1]).innerHTML = "<kbd>Sep 6th, 2016</kbd>";
       s16 = false;
     } else if (d16) {
-      img[framesLeft-1].initialize('data/CSV/image12_2016_12_19.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
+      img[framesLeft-1].loadImage('data/image12_2016_12_19.csv',  wCanvas[framesLeft-1], vImage, ctr - 1);
       document.getElementById(desc[framesLeft-1]).innerHTML = "<kbd>Dec 19th, 2016</kbd>";
       d16 = false;
     } else {
