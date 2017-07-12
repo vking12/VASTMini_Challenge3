@@ -13,6 +13,9 @@ y = d3.scaleLinear().domain([0,1]).rangeRound([heightgraph, 0]);
 
 function startGraph()
 {
+// delete bs-caret here... TODO
+
+
 // store our canvas information
     canvas1 = document.querySelector("canvas#Canvas1"),
     context1 = canvas1.getContext("2d"),
