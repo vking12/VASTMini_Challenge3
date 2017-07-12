@@ -65,6 +65,8 @@ var imgSystem = function() {
     img.src = imgPath;
     var canvas = document.getElementById(wCanvas);
     var ctx = canvas.getContext('2d');
+    canvas.height = 331;
+    canvas.width = 331;
     img.onload = function() {
       ctx.drawImage(img, 0, 0, 331, 331);
       canvas.style.visibility = 'visible';

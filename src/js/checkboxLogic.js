@@ -47,6 +47,8 @@ function cLogic() {
   for (var i = 0; i < wCanvas.length; i++){
     canvas = document.getElementById(wCanvas[i]);
     ctx = canvas.getContext('2d');
+    canvas.height = 0;
+    canvas.width = 0;
     // ctx.clearRect(0, 0, canvas.width, canvas.height);
     document.getElementById(desc[i]).innerHTML = "";
     canvas.style.visibility = 'hidden';
