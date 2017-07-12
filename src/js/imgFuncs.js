@@ -28,15 +28,21 @@ function changeZoomImage(path,location)
 function updateDiffImage()
 {
   var image = new Image;
-  mycanvas = document.querySelector("canvas#Canvas3"),
-  mycontext = mycanvas.getContext("2d");
-  mycontext.clearRect(0, 0,651,651);
+  var canvas = document.querySelector("canvas#Canvas3"),
+      context = canvas.getContext("2d");
+  context.clearRect(0, 0,651,651);
   contextZoom3.clearRect(0, 0,651,651);
   let imageDiff = d3.select("#image-diff").select("img").attr("src");
   image.src = imageDiff;
   image3.src =  imageDiff;
-  image.onload = newloaded;
+  image.onload = load;
   image3.onload = loadZoom3;
+
+  function load() {
+
+    context.drawImage(this, 0, 0,331,331);
+  }
+
 }
 
 function makeZoomLayout(path1,path2,path3)
@@ -79,8 +85,6 @@ function newloaded() {
 }
 
 function moveZoom(x,y,dx,dy){
-  //x = x*(651/331);
-  //y = y*(651/331);
   dx = (dx-x)/331;
   dy = (dy-y)/331;
   var imgwidth =  (1/dx)*(651/2);
