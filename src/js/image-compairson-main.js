@@ -84,6 +84,10 @@ $(function(){
 		{startGraph(); // after everything has been loaded for the image manipulation, start loading the graphs/brushing
 			loaded = true;
 		}
+		else {
+		updateDiffImage(); // re-draw the zoom image
+		// document.getElementById("img").style.display = "none";
+	}
 
 	}
 
@@ -116,25 +120,21 @@ $(function(){
 
 		if($this.is('#raw')){
 			resembleControl.ignoreNothing();
+
 		}
 		else
 		if($this.is('#less')){
 			resembleControl.ignoreLess();
+
 		}
 		if($this.is('#colors')){
 			resembleControl.ignoreColors();
+
 		}
 		else
 		if($this.is('#antialising')){
 			resembleControl.ignoreAntialiasing();
-		}
-		else
-		if($this.is('#same-size')){
-			resembleControl.scaleToSameSize();
-		}
-		else
-		if($this.is('#original-size')){
-			resembleControl.useOriginalSize();
+
 		}
 		else
 		if($this.is('#pink')){
@@ -146,6 +146,7 @@ $(function(){
 				}
 			});
 			resembleControl.repaint();
+
 		}
 		else
 		if($this.is('#yellow')){
@@ -157,6 +158,7 @@ $(function(){
 				}
 			});
 			resembleControl.repaint();
+
 		}
 		else
 		if($this.is('#flat')){
@@ -164,6 +166,7 @@ $(function(){
 				errorType: 'flat'
 			});
 			resembleControl.repaint();
+
 		}
 		else
 		if($this.is('#movement')){
@@ -171,6 +174,7 @@ $(function(){
 				errorType: 'movement'
 			});
 			resembleControl.repaint();
+
 		}
 		else
 		if($this.is('#flatDifferenceIntensity')){
@@ -178,6 +182,7 @@ $(function(){
 				errorType: 'flatDifferenceIntensity'
 			});
 			resembleControl.repaint();
+
 		}
 		else
 		if($this.is('#movementDifferenceIntensity')){
@@ -185,6 +190,7 @@ $(function(){
 				errorType: 'movementDifferenceIntensity'
 			});
 			resembleControl.repaint();
+
 		}
 		else
 		if($this.is('#opaque')){
@@ -192,6 +198,7 @@ $(function(){
 				transparency: 1
 			});
 			resembleControl.repaint();
+
 		}
 		else
 		if($this.is('#transparent')){
@@ -200,8 +207,7 @@ $(function(){
 			});
 			resembleControl.repaint();
 		}
-
-	});
+});
 
 	(function(){
 		var xhr = new XMLHttpRequest();
