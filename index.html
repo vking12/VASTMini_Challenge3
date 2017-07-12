@@ -139,7 +139,7 @@
 <body>
 <div class="container-fluid">
   <div class="row">
-    <div class="col"><h1 style= "color:black;">Col 1</h1>
+    <div class="col col-sm-2"><h1 style= "color:black;">Small Multiples</h1>
       <p><font color="#000000">Select Images:</font></p>
         <select class="selectpicker" multiple>
           <option id="Mar14" selected>Mar 17th, 2014</option>
@@ -156,13 +156,6 @@
           <option id="Dec16"> Dec 19th, 2016</option>
         </select>
 
-        <p><font color="#000000">Select Mode:</font></p>
-        <select class="selectpicker">
-            <option id="RGB" selected>RGB</option>
-            <option id="PlantHealth">Plant Health</option>
-            <option id="FloodBurn"> Flood-Burn</option>
-            <option id="SnowIceClouds"> SnowIceClouds</option>
-        </select>
 
       <!-- Divs to keep track of where our small multiple images will be will be  -->
       <div id="txt1"> </div>
@@ -191,7 +184,17 @@
       <canvas id = "img12" width="0" height="0"></canvas>
     </div>
 
-    <div class="col"><h1 style= "color:black;">Col 2</h1>
+    <div class="col col-sm-2"><h1 style= "color:black;"><br></h1>
+      <p><font color="#000000">Select Mode:</font></p>
+      <select class="selectpicker">
+          <option id="RGB" selected>RGB</option>
+          <option id="PlantHealth">Plant Health</option>
+          <option id="FloodBurn"> Flood-Burn</option>
+          <option id="SnowIceClouds"> SnowIceClouds</option>
+      </select>
+    </div>
+
+    <div class="col"><h1 style= "color:black;"><br></h1>
       <button class="ladda-button" data-color="purple" data-style="contract" onclick="cLogic()">Render</button>
       <p id="demo"></p>
 
