@@ -90,6 +90,21 @@
   width:338px !important;
 }
 
+#img1, #img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11, #img12{
+  visibility: : hidden;
+  border-style: solid;
+  border-width: 4px;
+  border-color: black;
+  width:338px !important;
+}
+
+#sepButton {
+  border-style: solid;
+  border-width: 4px;
+  border-color: #f0f0f0;
+  width:338px !important;
+}
+
 
 h1	{
 color: #FFF;

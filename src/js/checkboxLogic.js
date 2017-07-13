@@ -5,7 +5,7 @@ function cLogic() {
   l.start();
 
 
-  var framesLeft = 5;
+  var framesLeft = 12;
 
   var m14 = document.getElementById("Mar14").selected;
   var a14 = document.getElementById("Aug14").selected;
@@ -37,9 +37,13 @@ function cLogic() {
     vImage = 'sic';
   }
 
-  var img = [new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem()];
-  var wCanvas = ["img5", "img4", "img3", "img2", "img1"];
-  var desc = ["txt5", "txt4", "txt3", "txt2", "txt1"];
+  var img = [new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem()];
+  var wCanvas = ["img12", "img11", "img10", "img9", "img8", "img7", "img6", "img5", "img4", "img3", "img2", "img1"];
+  var desc = ["txt12", "txt11", "txt10", "txt9", "txt8", "txt7", "txt6", "txt5", "txt4", "txt3", "txt2", "txt1"];
+
+
+
+
 
   var canvas, ctx;
 
