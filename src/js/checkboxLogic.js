@@ -1,10 +1,4 @@
 function cLogic() {
-  // Create a new instance of ladda for the specified button
-  var l = Ladda.create( document.querySelector( '.ladda-button' ) );
-  // Toggle between loading/not loading states
-  l.start();
-
-
   var framesLeft = 12;
 
   var m14 = document.getElementById("Mar14").selected;
@@ -20,9 +14,17 @@ function cLogic() {
   var s16 = document.getElementById("Sep16").selected;
   var d16 = document.getElementById("Dec16").selected;
   var rgb = document.getElementById("RGB").selected;
+  var none = document.getElementById("none").selected;
   var plantH = document.getElementById("PlantHealth").selected;
   var floodB = document.getElementById("FloodBurn").selected;
   var sic = document.getElementById("SnowIceClouds").selected;
+
+  if (none){
+    // Create a new instance of ladda for the specified button
+    var l = Ladda.create( document.querySelector( '.ladda-button' ) );
+    // Toggle between loading/not loading states
+    l.start();
+  }
 
 
   var vImage;
@@ -40,10 +42,6 @@ function cLogic() {
   var img = [new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem(), new imgSystem()];
   var wCanvas = ["img12", "img11", "img10", "img9", "img8", "img7", "img6", "img5", "img4", "img3", "img2", "img1"];
   var desc = ["txt12", "txt11", "txt10", "txt9", "txt8", "txt7", "txt6", "txt5", "txt4", "txt3", "txt2", "txt1"];
-
-
-
-
 
   var canvas, ctx;
 

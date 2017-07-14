@@ -142,6 +142,8 @@
     <div class="col col-sm-2"><h1 style= "color:black;"><br></h1>
       <p><font color="#000000">Select Images:</font></p>
         <select class="selectpicker" multiple>
+          <option id="sAll"> Select All</option>
+          <option id="none"> None</option>
           <option id="Mar14" selected>Mar 17th, 2014</option>
           <option id="Aug14"> Aug 24th, 2014</option>
           <option id="Nov14"> Nov 28th, 2014</option>
@@ -155,6 +157,50 @@
           <option id="Sep16"> Sep 6th, 2016</option>
           <option id="Dec16"> Dec 19th, 2016</option>
         </select>
+
+        <!--- if user decides that the want to select all or select none -->
+        <script>
+        $(function() {
+          $('.selectpicker').on('change', function(){
+            var selected = $(this).find("option:selected").val();
+            if (selected == 'Select All'){
+              document.getElementById("Mar14").selected = true;
+              document.getElementById("Aug14").selected = true;
+              document.getElementById("Nov14").selected = true;
+              document.getElementById("Dec14").selected = true;
+              document.getElementById("Feb15").selected = true;
+              document.getElementById("Jun15").selected = true;
+              document.getElementById("Sep15").selected = true;
+              document.getElementById("Nov15").selected = true;
+              document.getElementById("Mar16").selected = true;
+              document.getElementById("Jun16").selected = true;
+              document.getElementById("Sep16").selected = true;
+              document.getElementById("Dec16").selected = true;
+              document.getElementById("none").selected = false;
+              document.getElementById("sAll").selected = false;
+              $('.selectpicker').selectpicker('refresh')
+            }
+            else if (selected == 'None'){
+              document.getElementById("Mar14").selected = false;
+              document.getElementById("Aug14").selected = false;
+              document.getElementById("Nov14").selected = false;
+              document.getElementById("Dec14").selected = false;
+              document.getElementById("Feb15").selected = false;
+              document.getElementById("Jun15").selected = false;
+              document.getElementById("Sep15").selected = false;
+              document.getElementById("Nov15").selected = false;
+              document.getElementById("Mar16").selected = false;
+              document.getElementById("Jun16").selected = false;
+              document.getElementById("Sep16").selected = false;
+              document.getElementById("Dec16").selected = false;
+              document.getElementById("sAll").selected = false;
+              document.getElementById("none").selected = false;
+              $('.selectpicker').selectpicker('refresh')
+            }
+
+          });
+        });
+        </script>
 
 
         <!-- Some space to seperate the images from the selectpicker -->
