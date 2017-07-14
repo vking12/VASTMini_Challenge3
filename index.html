@@ -139,7 +139,7 @@
 <body>
 <div class="container-fluid">
   <div class="row">
-    <div class="col col-sm-2"><h1 style= "color:black;">Small Multiples</h1>
+    <div class="col col-sm-2"><h1 style= "color:black;"><br></h1>
       <p><font color="#000000">Select Images:</font></p>
         <select class="selectpicker" multiple>
           <option id="Mar14" selected>Mar 17th, 2014</option>
@@ -155,33 +155,22 @@
           <option id="Sep16"> Sep 6th, 2016</option>
           <option id="Dec16"> Dec 19th, 2016</option>
         </select>
+        
+
+        <!-- Some space to seperate the images from the selectpicker -->
+        <canvas id = "seperate" width="1600" height="20"></canvas>
 
 
       <!-- Divs to keep track of where our small multiple images will be will be  -->
       <div id="txt1"> </div>
-      <canvas id = "img1" width="0" height="0"></canvas>
+      <canvas id = "img1" width="0" height="0" style="visibility: hidden;"></canvas>
       <div id="txt2"> </div>
-      <canvas id = "img2" width="0" height="0"></canvas>
+      <canvas id = "img2" width="0" height="0" style="visibility: hidden;"></canvas>
       <div id="txt3"> </div>
-      <canvas id = "img3" width="0" height="0"></canvas>
+      <canvas id = "img3" width="0" height="0" style="visibility: hidden;"></canvas>
       <div id="txt4"> </div>
-      <canvas id = "img4" width="0" height="0"></canvas>
-      <div id="txt5"> </div>
-      <canvas id = "img5" width="0" height="0"></canvas>
-      <div id="txt6"> </div>
-      <canvas id = "img6" width="0" height="0"></canvas>
-      <div id="txt7"> </div>
-      <canvas id ="img7" width="0" height="0"></canvas>
-      <div id="txt8"> </div>
-      <canvas id = "img8" width="0" height="0"></canvas>
-      <div id="txt9"> </div>
-      <canvas id = "img9" width="0" height="0"></canvas>
-      <div id="txt10"> </div>
-      <canvas id = "img10" width="0" height="0"></canvas>
-      <div id="txt12"> </div>
-      <canvas id = "img11" width="0" height="0"></canvas>
-      <div id="txt12"> </div>
-      <canvas id = "img12" width="0" height="0"></canvas>
+      <canvas id = "img4" width="0" height="0" style="visibility: hidden;"></canvas>
+
     </div>
 
     <div class="col col-sm-2"><h1 style= "color:black;"><br></h1>
@@ -192,15 +181,42 @@
           <option id="FloodBurn"> Flood-Burn</option>
           <option id="SnowIceClouds"> SnowIceClouds</option>
       </select>
+
+      <!-- Some space to seperate the images from the selectpicker -->
+      <canvas id = "seperate" width="1600" height="20"></canvas>
+
+      <!-- Divs to keep track of where our small multiple images will be will be  -->
+      <div id="txt5"> </div>
+      <canvas id = "img5" width="0" height="0" style="visibility: hidden;"></canvas>
+      <div id="txt6"> </div>
+      <canvas id = "img6" width="0" height="0" style="visibility: hidden;"></canvas>
+      <div id="txt7"> </div>
+      <canvas id ="img7" width="0" height="0" style="visibility: hidden;"></canvas>
+      <div id="txt8"> </div>
+      <canvas id = "img8" width="0" height="0" style="visibility: hidden;"></canvas>
     </div>
 
-    <div class="col"><h1 style= "color:black;"><br></h1>
-      <button class="ladda-button" data-color="purple" data-style="contract" onclick="cLogic()">Render</button>
+    <div class="col col-sm-2"><h1 style= "color:black;"></h1>
+      <canvas id = "sepButton" width="0" height="36" style="visibility: visible;"></canvas>
+      <button class="ladda-button" data-color="mint" data-style="contract" onclick="cLogic()">Render</button>
       <p id="demo"></p>
 
       <!-- Need the below to run ladda button animations -->
       <script src="lib/js/spin.min.js"></script>
       <script src="lib/js/ladda.min.js"></script>
+
+      <!-- Some space to seperate the images from the selectpicker -->
+      <canvas id = "seperate" width="1600" height="20"></canvas>
+
+      <!-- Divs to keep track of where our small multiple images will be will be  -->
+      <div id="txt9"> </div>
+      <canvas id = "img9" width="0" height="0" style="visibility: hidden;"></canvas>
+      <div id="txt10"> </div>
+      <canvas id = "img10" width="0" height="0" style="visibility: hidden;"></canvas>
+      <div id="txt11"> </div>
+      <canvas id = "img11" width="0" height="0" style="visibility: hidden;"></canvas>
+      <div id="txt12"> </div>
+      <canvas id = "img12" width="0" height="0" style="visibility: hidden;"></canvas>
     </div>
 
     <div class="col"><h1 style= "color:black;">Image Comparison</h1>
