@@ -15,16 +15,18 @@ function changeImage(path,location) {
 
 }
 
+// if we change variables to the difference image,
+// we have to make sure to update the zoomed in one as well
 function changeZoomImage(path,location)
 {
   if(location === "Canvas1")
   { image1.src = path; image1.onload = loadZoom1;}
   else if(location === "Canvas2")
   { image2.src = path; image2.onload = loadZoom2;}
-
   updateDiffImage();
 }
 
+// when the diff image changes, we update it's canvas
 function updateDiffImage()
 {
   var image = new Image;
@@ -67,6 +69,8 @@ function makeZoomLayout(path1,path2,path3)
    image3.onload = loadZoom3;
 }
 
+// ------ zooming functions ----------
+// each one has seperate depending on what image gets changed
 function loadZoom1() {
   contextZoom1.drawImage(this, 0, 0);
 }
@@ -89,12 +93,12 @@ function moveZoom(x,y,dx,dy){
   dy = (dy-y)/331;
   var imgwidth =  (1/dx)*(651/2);
   var imgheight =  (1/dy)*(651/2);
-  console.log("Width" + imgwidth + "\nHeight"+imgheight);
-  console.log("X:" + x + " Y:" + y +" dx " + dx + " dy " + dy);
+
+  // clear the three canvases of the old image
   contextZoom1.clearRect(0, 0,651,651);
   contextZoom2.clearRect(0, 0,651,651);
   contextZoom3.clearRect(0, 0,651,651);
-
+  // update with new image, that is scaled to what the user wants to zoom in on
   contextZoom1.drawImage(image1, -x * (1/dx), -y * (1/dy),imgwidth,imgheight);
   contextZoom2.drawImage(image2, -x * (1/dx), -y * (1/dy),imgwidth,imgheight);
   contextZoom3.drawImage(image3, -x * (1/dx), -y * (1/dy),imgwidth,imgheight);
@@ -102,7 +106,7 @@ function moveZoom(x,y,dx,dy){
 
 
 
-
+// creates a layout for where the histogram graph will be 
 function makeGraphLayout(GraphSVG)
 {
   var graph = d3.select(GraphSVG).append("svg")
