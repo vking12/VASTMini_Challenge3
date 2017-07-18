@@ -86,13 +86,11 @@ $(function(){
 		}
 		else {
 		updateDiffImage(); // re-draw the zoom image
-		// document.getElementById("img").style.display = "none";
 	}
+}
 
-	}
 
-	var file1;
-	var file2;
+	var file1,file2; // the two images' paths which we'll be comparing to each other
 	var resembleControl;
 
 // still allowing dropping in case we want to
@@ -214,15 +212,16 @@ $(function(){
 		var xhr2 = new XMLHttpRequest();
 		var done = $.Deferred();
 		var dtwo = $.Deferred();
+    var firstImage = 'data/rgb/image01_2014_03_17.png'; // this will be the first image we use
 
-		xhr.open('GET', 'data/rgb/image01_2014_03_17.png', true);
+		xhr.open('GET', firstImage, true);
 		xhr.responseType = 'blob';
 		xhr.onload = function(e) {
 			done.resolve(this.response);
 		};
 		xhr.send();
 
-		xhr2.open('GET', 'data/rgb/image01_2014_03_17.png', true);
+		xhr2.open('GET', firstImage, true);
 		xhr2.responseType = 'blob';
 		xhr2.onload = function(e) {
 			dtwo.resolve(this.response);
@@ -259,8 +258,9 @@ $(function(){
 
  // when we start out, load these two images.
 		$(document).ready(function(){
-				file1 = 'data/rgb/image01_2014_03_17.png'
-				file2 = 'data/rgb/image01_2014_03_17.png'
+ 				// again, when we start out make the first two files be equal to
+				file1 = firstImage;
+				file2 = firstImage;
 			$.when(done, dtwo).done(function(file, file1){
 				if (typeof FileReader === 'undefined') {
 					resembleControl = resemble(file1).compareTo(file2).onComplete(onComplete);

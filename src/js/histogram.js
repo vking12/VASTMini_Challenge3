@@ -24,21 +24,15 @@ function makeHistogram(GraphSVG,svg,imageLocation,context,title){
        .on("end", brushended);
 
        if(title === "Image 1")
-       {
+       { // this brush needs to be different so zooming is linked
          brush = d3.brush()
                .on("start brush", firstBrush)
                .on("end", brushended);
 
           brush1 = brush;
        }
-       else if(title === "Image 2")
-       {
-         brush2 = brush;
-       }
-       else
-       {
-         brush3 = brush;
-       }
+       else if(title === "Image 2"){brush2 = brush;}
+       else { brush3 = brush;}
 
 
   var histogram = GraphSVG.append("g")
@@ -210,7 +204,7 @@ function makeHistogram(GraphSVG,svg,imageLocation,context,title){
       var validbrush1 = d3.select("#Svg1").select("#brushes");
       var validbrush2 = d3.select("#Svg2").select("#brushes");
       var validbrush3 = d3.select("#Svg3").select("#brushes");
-
+      // if all the valid brushes have been created, start moving them togheter
       if(!validbrush1.empty() &&  !validbrush2.empty() && !validbrush3.empty())
       {
         d3.select("#Svg2").select("#brushes").call(brush2.move,s);
