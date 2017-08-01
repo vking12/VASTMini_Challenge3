@@ -50,6 +50,7 @@ $(function(){
 			$('#brightness').css('width',data.brightness+'%');
 			$('#white').css('width',data.white+'%');
 			$('#black').css('width',data.black+'%');
+
 		});
 
 	});
@@ -65,7 +66,6 @@ $(function(){
 			window.open(diffImage.src, '_blank');
 		});
 
-		$('.buttons').show();
 		$('#difference-perc').text(data.misMatchPercentage + "%");
 		$('#thebar').css("width", data.misMatchPercentage * 3 );
 
@@ -77,32 +77,72 @@ $(function(){
 		else if(misM < 80){$('#thebar').css("background-color", "#fdae61");}
 		else {$('#thebar').css("background-color", "#ba2e51");}
 
-
-		// else {
-		// 	$('#mismatch').text(data.misMatchPercentage);
-		// 	if(!data.isSameDimensions){
-		// 		$('#differentdimensions').show();
-		// 	} else {
-		// 		$('#differentdimensions').hide();
-		// 	}
-		// 	$('#diff-results').show();
-		// 	$('#thesame').hide();
-		// }
-
-
-
 		if(!loaded)
 		{startGraph(); // after everything has been loaded for the image manipulation, start loading the graphs/brushing
 			loaded = true;
+
 		}
 		else {
 		updateDiffImage(); // re-draw the zoom image
+		// we have to keep the settings from what was done previously
+
 	}
+
+
+
 }
 
 
 	var file1,file2; // the two images' paths which we'll be comparing to each other
 	var resembleControl;
+
+  function redoResemble()
+	{
+		var answer= [];
+						$('.buttons button').each(function(){
+								if($(this).hasClass("active"))
+								answer.push ( $(this).attr('id') );
+						});
+
+		console.log(answer);
+
+				if(answer.includes('raw')){ resembleControl.ignoreNothing();}
+				else if(answer.includes('less')){ resembleControl.ignoreLess();}
+				else if(answer.includes('colors')){ resembleControl.ignoreColors();}
+				else if(answer.includes('antialising')){ resembleControl.ignoreAntialiasing();}
+
+				if(answer.includes('#flat')){resemble.outputSettings({errorType: 'flat'});}
+				else if(answer.includes('#movement')){resemble.outputSettings({errorType: 'movement'});
+				}
+				else
+				if(answer.includes('#flatDifferenceIntensity')){resemble.outputSettings({
+						errorType: 'flatDifferenceIntensity'});
+
+				}
+				else if(answer.includes('#movementDifferenceIntensity')){resemble.outputSettings({ errorType:'movementDifferenceIntensity'});}
+				else if(answer.includes('#opaque')){resemble.outputSettings({transparency: 1});}
+				else if(answer.includes('#transparent')){resemble.outputSettings({	transparency: 0.3});}
+
+				if(answer.includes('#pink')){
+					resemble.outputSettings({
+						errorColor: {
+							red: 255,
+							green: 0,
+							blue: 255
+						}
+					});
+				}
+				else if(answer.includes('#yellow')){
+					resemble.outputSettings({
+						errorColor: {
+							red: 255,
+							green: 255,
+							blue: 0
+						}});}
+					resembleControl.repaint();
+		}
+
+
 
 // still allowing dropping in case we want to
 	dropZone($('#dropzone1'), function(file){
@@ -242,6 +282,7 @@ $(function(){
 
 			// handle menu options
 			$('input:image').click(function(){
+
 				// get source of the image
 				let file = $(this).attr("src");
 				// figure out if this is button 1 or 2
@@ -255,6 +296,8 @@ $(function(){
 
 						if(file2){
 							resembleControl = resemble(file).compareTo(file2).onComplete(onComplete);
+							console.log("File 2 done ");
+
 						}
 					}
 					else {
@@ -263,8 +306,13 @@ $(function(){
 				file2 = file;
 				if(file1){
 					resembleControl = resemble(file).compareTo(file1).onComplete(onComplete);
+					console.log("File 1 done ");
+
+
 				}
 				}
+
+
 			});
 
  // when we start out, load these two images.
@@ -272,17 +320,13 @@ $(function(){
  				// again, when we start out make the first two files be equal to
 				file1 = firstImage;
 				file2 = firstImage;
+
 			$.when(done, dtwo).done(function(file, file1){
 				if (typeof FileReader === 'undefined') {
 					resembleControl = resemble(file1).compareTo(file2).onComplete(onComplete);
 
 				} else {
 					resembleControl = resemble(file).compareTo(file1).onComplete(onComplete);
-					resembleControl.ignoreAntialiasing();
-					resemble.outputSettings({
-						errorType: 'movementDifferenceIntensity'
-					});
-					resembleControl.repaint();
 				}
 			});
 			return false;

@@ -114,7 +114,7 @@
                         <button class="btn btn-outline-primary " id="flat">Flat</button>
                         <button class="btn btn-outline-primary " id="movement">Movement</button>
                         <button class="btn btn-outline-primary " id="flatDifferenceIntensity">Flat + diff intensity</button>
-                        <button class="btn btn-outline-primary  activef" id="movementDifferenceIntensity">Movement + diff intensity</button>
+                        <button class="btn btn-outline-primary active" id="movementDifferenceIntensity">Movement + diff intensity</button>
                       </div>
                       <br/>
                       <br/>
@@ -269,7 +269,12 @@
 
     <div class="col"><h1 style= "color:black;">Image Comparison</h1>
     <div class="dropdown">
-              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                <!-- <button type="button" class="btn btn-warning">
+                  Redo
+                </button> -->
+
+              <button type="button" class="btn btn-primary dropdown-toggle" onclick="redoResemble()" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Pick Image 1
               </button>
 
@@ -414,14 +419,15 @@
                         Pick Image 2 <span class="caret"></span>
                     </a> -->
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Pick Image 1
+                      Pick Image 2
                     </button>
-                      <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+
+                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
                           <li class="dropdown-submenu">
-                          <button class="dropdown-item" type="button">RGB</button>
+                            <button class="dropdown-item" type="button">RGB</button>
                             <ul class="dropdown-menu">
                               <li class="dropdown-submenu">
-                                <<button class="dropdown-item" type="button">2014</button>
+                                <button class="dropdown-item" type="button">2014</button>
                                 <ul class="dropdown-menu">
                                   <li><input id = "btn2" type = "image" img src="data/rgb/image01_2014_03_17.png" date="03/17/2014" alt="Image 1" style="width:140px;height:140px;">03/17/2014</a></li>
                                   <li><input id = "btn2" type = "image" img src="data/rgb/image02_2014_08_24.png" date="08/24/2014" alt="Image 1" style="width:140px;height:140px;">08/24/2014</a></li>
@@ -552,8 +558,8 @@
 
    <canvas id ="Canvas3" width="331" height="331"></canvas>
      <div id="image-diff-outside" class="drop-zone">
-       <div id = "image-diff" style="visibility: hidden;"></div>
-       Loading diff . . .
+       <div id = "image-diff" style="visibility: hidden;">Loading diff . . .</div>
+
      </div>
      <svg id = "Svg3" width="331" height="331"></svg>
        <p style = "color:black;width:250px;left:">

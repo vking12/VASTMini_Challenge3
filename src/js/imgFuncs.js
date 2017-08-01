@@ -106,7 +106,7 @@ function moveZoom(x,y,dx,dy){
 
 
 
-// creates a layout for where the histogram graph will be 
+// creates a layout for where the histogram graph will be
 function makeGraphLayout(GraphSVG)
 {
   var graph = d3.select(GraphSVG).append("svg")
