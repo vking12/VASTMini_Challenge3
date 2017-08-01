@@ -75,7 +75,7 @@ $(function(){
 		else if(misM < 40){$('#thebar').css("background-color", "#a6d96a");}
 		else if(misM < 60){$('#thebar').css("background-color", "#ffffbf");}
 		else if(misM < 80){$('#thebar').css("background-color", "#fdae61");}
-		else {$('#thebar').css("background-color", "#d7191c");}
+		else {$('#thebar').css("background-color", "#ba2e51");}
 
 
 		// else {
