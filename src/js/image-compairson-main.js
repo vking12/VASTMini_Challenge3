@@ -66,20 +66,31 @@ $(function(){
 		});
 
 		$('.buttons').show();
+		$('#difference-perc').text(data.misMatchPercentage + "%");
+		$('#thebar').css("width", data.misMatchPercentage * 3 );
 
-		if(data.misMatchPercentage == 0){
-			$('#thesame').show();
-			$('#diff-results').hide();
-		} else {
-			$('#mismatch').text(data.misMatchPercentage);
-			if(!data.isSameDimensions){
-				$('#differentdimensions').show();
-			} else {
-				$('#differentdimensions').hide();
-			}
-			$('#diff-results').show();
-			$('#thesame').hide();
-		}
+		var misM = data.misMatchPercentage;
+
+		if(misM < 20){$('#thebar').css("background-color", "#1a9641");}
+		else if(misM < 40){$('#thebar').css("background-color", "#a6d96a");}
+		else if(misM < 60){$('#thebar').css("background-color", "#ffffbf");}
+		else if(misM < 80){$('#thebar').css("background-color", "#fdae61");}
+		else {$('#thebar').css("background-color", "#d7191c");}
+
+
+		// else {
+		// 	$('#mismatch').text(data.misMatchPercentage);
+		// 	if(!data.isSameDimensions){
+		// 		$('#differentdimensions').show();
+		// 	} else {
+		// 		$('#differentdimensions').hide();
+		// 	}
+		// 	$('#diff-results').show();
+		// 	$('#thesame').hide();
+		// }
+
+
+
 		if(!loaded)
 		{startGraph(); // after everything has been loaded for the image manipulation, start loading the graphs/brushing
 			loaded = true;

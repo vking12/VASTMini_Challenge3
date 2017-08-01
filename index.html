@@ -547,17 +547,19 @@
        Loading diff . . .
      </div>
      <svg id = "Svg3" width="331" height="331"></svg>
-     <div id="thesame" style="display:none;color:#16D97E !important">
-       <strong>These images are the same!</strong>
-     </div>
-     <div id="diff-results" style="display:none; color: #000;">
-       <p style = "color:black;width:400px;left:">
-         <strong>The second image is <span id="mismatch"></span>% different compared to the first.
-         <span id="differentdimensions" style="display:none;">And they have different dimensions.</span></strong>
+       <p style = "color:black;width:250px;left:">
+         <strong>Image difference <span id="mismatch"></span>
+          <div class="progress" style="width:300px !important; height:38px;" >
+            <div id = "thebar" class="progress-bar" role="progressbar" aria-valuenow="100"
+            aria-valuemin="0" aria-valuemax="100" style="width:300px;" >
+              <div id = "difference-perc" style = "padding: 5px !important;">
+                100%
+              </div>
+            </div>
+          </div>
        </p>
-
      <br/>
- </div>
+
 </div>
     <div class="col"><h1 style= "color:black;">Color histogram</h1>
       <!-- Divs to keep track of where our graphs will be  -->

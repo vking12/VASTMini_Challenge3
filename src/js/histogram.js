@@ -18,7 +18,6 @@ function makeHistogram(GraphSVG,svg,imageLocation,context,title){
       .x(function(d, i) { return x(i); })
       .y(y);
 
-
   var brush = d3.brush()
        .on("start brush", brushed)
        .on("end", brushended);
