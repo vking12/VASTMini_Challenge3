@@ -91,6 +91,11 @@
   width:338px !important;
 }
 
+#selectTxt {
+  color: black;
+  font-size: 70%;
+}
+
 
 h1	{
 color: #FFF;
