@@ -89,10 +89,10 @@ function newloaded() {
 }
 
 function moveZoom(x,y,dx,dy){
-  dx = (dx-x)/294;
-  dy = (dy-y)/294;
-  var imgwidth =  (1/dx)*(651/2);
-  var imgheight =  (1/dy)*(651/2);
+  dx = (dx-x)/292;
+  dy = (dy-y)/292;
+  var imgwidth =  (1/dx)*(310);
+  var imgheight =  (1/dy)*(310);
 
   // clear the three canvases of the old image
   contextZoom1.clearRect(0, 0,651,651);
