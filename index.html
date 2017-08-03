@@ -134,7 +134,7 @@
 <div class="container-fluid">
   <div id="entire_screen"><div>
   <div class="row">
-    <div class="col col-sm-2"><h1 style= "color:black;"><br></h1>
+    <div class="col col-sm-2"><div id="titleText">Small Multiples Tool</div>
       <div id="selectTxt">Select Dates:</div>
         <select class="selectpicker" multiple>
           <option id="sAll"> Select All</option>
@@ -214,11 +214,13 @@
 
     <div class="col-sm-2"><br> </div>
 
-    <div class="col-sm-2" st><h1 style= "color:black;width:310px;">Image Comparison</h1></div>
+    <div class="col-sm-2" st><div id="titleText">Zoomed Comparison</div><h1 style= "color:black;width:310px;">Image Comparison</h1></div>
 
-    <div class="col col-sm-2 "><h1 style= "color:black;width:250px;">Zoomed view</h1></div>
+    <div class="col col-sm-2 "><div id="titleText"><br></div><h1 style= "color:black;width:250px;"><div id="titleText"></div>Zoomed view</h1></div>
 
-    <div class="col col-sm-2"><h1 style= "color:black;width:300px;">Color histogram</h1></div>
+    <div class="col col-sm-2"><div id="titleText"><br></div><h1 style= "color:black;width:300px;">Color histogram</h1></div>
+
+    </div>
 
   </div>
 
@@ -612,6 +614,8 @@
 
   </div>
 </div>
+<!-- render the images so no empty space initially -->
+<script> cLogic(); </script>
   <!-- end of the cololumns, everything outside of this doesn't have formatting -->
 
         <!-- JQuery -->

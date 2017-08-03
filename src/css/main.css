@@ -44,6 +44,20 @@
   border-color: black;
 }
 
+#modSep {
+  margin: 0.5em;
+  padding:1em;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+#titleText {
+  color: black;
+  font-size: 120%;
+  font-weight: bold;
+}
+
 
 
 #my-histogram{
@@ -55,21 +69,21 @@
 
 #Canvas1,#Svg1{
   position:absolute;
-  top: 78px;
+  top: 54px;
   left:19px;
 }
 
 
 #Canvas2,#Svg2{
   position:absolute;
-  top: 443px;
+  top: 424px;
   left:19px;
 }
 
 
 #Canvas3,#Svg3{
   position:absolute;
-  top: 819px;
+  top: 801px;
   left:19px;
 }
 
