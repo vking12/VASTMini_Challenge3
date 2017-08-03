@@ -1,3 +1,10 @@
+.modSep {
+  margin-top: 0.5em;
+  padding-top: 0.5em;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
 
 
 .tick line{
@@ -69,21 +76,21 @@
 
 #Canvas1,#Svg1{
   position:absolute;
-  top: 40px;
+  top: 120px;
   left:19px;
 }
 
 
 #Canvas2,#Svg2{
   position:absolute;
-  top: 406px;
+  top: 490px;
   left:19px;
 }
 
 
 #Canvas3,#Svg3{
   position:absolute;
-  top: 782px;
+  top: 867px;
   left:19px;
 }
 
@@ -103,7 +110,13 @@
   height:314px !important;
 }
 
-#txt1, #txt2, #txt3, #txt4, #txt5, #txt6, #txt7, #txt8, #txt9, #txt10, #txt11, #txt12{
+/*because of bootsrap formatting. */
+#txt9{
+  margin-top: 3.2em;
+  visibility: : hidden;
+}
+
+#txt1, #txt2, #txt3, #txt4, #txt5, #txt6, #txt7, #txt8, #txt10, #txt11, #txt12{
   margin-top: 1em;
   visibility: : hidden;
 }
