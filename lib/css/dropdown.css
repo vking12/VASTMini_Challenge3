@@ -45,3 +45,21 @@
     -moz-border-radius: 6px 0 6px 6px;
     border-radius: 6px 0 6px 6px;
 }
+
+.half-rule {
+    margin-left: 0;
+    text-align: left;
+    width: 99%;
+    margin-top: 4px;
+    margin-bottom: 4px;
+ }
+
+ .dark-rule {
+     margin-left: 0;
+     text-align: left;
+     width: 99%;
+     height :4px;
+     color:black;
+     margin-top: 4px;
+     margin-bottom: 4px;
+  }

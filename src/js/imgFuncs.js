@@ -42,7 +42,7 @@ function updateDiffImage()
 
   function load() {
 
-    context.drawImage(this, 0, 0,331,331);
+    context.drawImage(this, 0, 0,294,294);
   }
 
 }
@@ -85,12 +85,12 @@ function loadZoom3() {
 
 function newloaded() {
 
-  mycontext.drawImage(this, 0, 0,331,331);
+  mycontext.drawImage(this, 0, 0,292,292);
 }
 
 function moveZoom(x,y,dx,dy){
-  dx = (dx-x)/331;
-  dy = (dy-y)/331;
+  dx = (dx-x)/294;
+  dy = (dy-y)/294;
   var imgwidth =  (1/dx)*(651/2);
   var imgheight =  (1/dy)*(651/2);
 

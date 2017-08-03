@@ -19,13 +19,13 @@ footer {
 }
 
 .drop-zone {
-    border: 10px solid #000000;
+    border: 4px solid #000000;
     color: #ccc;
     font-size: 32px;
-    height: 351px;
+    height: 300px;
     line-height: 451px;
     text-align: center;
-    width: 351px;
+    width: 300px;
     overflow: hidden;
     position: relative;
 }
@@ -35,7 +35,7 @@ footer {
 }
 
 .drop-zone img {
-    width: 351px;
+    width: 300px;
     position: absolute;
     top: 0;
     left: 0;

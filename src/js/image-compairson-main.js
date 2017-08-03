@@ -95,52 +95,33 @@ $(function(){
 
 	var file1,file2; // the two images' paths which we'll be comparing to each other
 	var resembleControl;
+	// var map =
+	// {
+	// 	raw:  { func : resembleControl.ignoreNothing},
+	// 	less: { func : resembleControl.ignoreLess},
+	// 	colors: {func : resembleControl.ignoreColors},
+	// 	antialising: { func: }
+	//
+	// }
+
 
   function redoResemble()
 	{
 		var answer= [];
-						$('.buttons button').each(function(){
-								if($(this).hasClass("active"))
+						$('.buttons button.active').each(function(){
 								answer.push ( $(this).attr('id') );
 						});
 
 		console.log(answer);
 
-				if(answer.includes('raw')){ resembleControl.ignoreNothing();}
-				else if(answer.includes('less')){ resembleControl.ignoreLess();}
-				else if(answer.includes('colors')){ resembleControl.ignoreColors();}
-				else if(answer.includes('antialising')){ resembleControl.ignoreAntialiasing();}
+				// if(answer.includes('raw')){ resembleControl.ignoreNothing();}
+				// else if(answer.includes('less')){ resembleControl.ignoreLess();}
+				// else if(answer.includes('colors')){ resembleControl.ignoreColors();}
+				// else if(answer.includes('antialising')){ resembleControl.ignoreAntialiasing();}
+				// resembleControl.repaint();
 
-				if(answer.includes('#flat')){resemble.outputSettings({errorType: 'flat'});}
-				else if(answer.includes('#movement')){resemble.outputSettings({errorType: 'movement'});
-				}
-				else
-				if(answer.includes('#flatDifferenceIntensity')){resemble.outputSettings({
-						errorType: 'flatDifferenceIntensity'});
+	}
 
-				}
-				else if(answer.includes('#movementDifferenceIntensity')){resemble.outputSettings({ errorType:'movementDifferenceIntensity'});}
-				else if(answer.includes('#opaque')){resemble.outputSettings({transparency: 1});}
-				else if(answer.includes('#transparent')){resemble.outputSettings({	transparency: 0.3});}
-
-				if(answer.includes('#pink')){
-					resemble.outputSettings({
-						errorColor: {
-							red: 255,
-							green: 0,
-							blue: 255
-						}
-					});
-				}
-				else if(answer.includes('#yellow')){
-					resemble.outputSettings({
-						errorColor: {
-							red: 255,
-							green: 255,
-							blue: 0
-						}});}
-					resembleControl.repaint();
-		}
 
 
 
@@ -297,6 +278,7 @@ $(function(){
 						if(file2){
 							resembleControl = resemble(file).compareTo(file2).onComplete(onComplete);
 							console.log("File 2 done ");
+									 redoResemble();
 
 						}
 					}
@@ -307,6 +289,7 @@ $(function(){
 				if(file1){
 					resembleControl = resemble(file).compareTo(file1).onComplete(onComplete);
 					console.log("File 1 done ");
+							 redoResemble();
 
 
 				}

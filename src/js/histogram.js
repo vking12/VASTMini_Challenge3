@@ -109,7 +109,7 @@ function makeHistogram(GraphSVG,svg,imageLocation,context,title){
   image.onload = loaded;
 
   function loaded() {
-    context.drawImage(this, 0, 0,331,331);
+    context.drawImage(this, 0, 0,292,292);
 
     svg.append("g")
         .attr("class", "brush")
