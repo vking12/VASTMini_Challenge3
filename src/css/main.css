@@ -31,6 +31,11 @@
   shape-rendering: crispEdges;
 }
 
+.seper {
+  width: 426px;
+  height: 10px;
+}
+
 
 
 #my-histogram{
@@ -74,6 +79,11 @@
   border-color: black;
   width:314px !important;
   height:314px !important;
+}
+
+#txt1, #txt2, #txt3, #txt4, #txt5, #txt6, #txt7, #txt8, #txt9, #txt10, #txt11, #txt12{
+  margin-top: 1em;
+  visibility: : hidden;
 }
 
 #img1, #img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #img10, #img11, #img12{
