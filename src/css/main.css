@@ -1,3 +1,11 @@
+.modSep {
+  /*
+  margin: 0.5em;
+  padding:10px; */
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
 
 
 .tick line{
@@ -103,7 +111,13 @@
   height:314px !important;
 }
 
-#txt1, #txt2, #txt3, #txt4, #txt5, #txt6, #txt7, #txt8, #txt9, #txt10, #txt11, #txt12{
+/*because of bootsrap formatting. */
+#txt9{
+  margin-top: 3.2em;
+  visibility: : hidden;
+}
+
+#txt1, #txt2, #txt3, #txt4, #txt5, #txt6, #txt7, #txt8, #txt10, #txt11, #txt12{
   margin-top: 1em;
   visibility: : hidden;
 }
