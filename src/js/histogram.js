@@ -82,9 +82,9 @@ function makeHistogram(GraphSVG,svg,imageLocation,context,title){
       // text label for the x axis
       GraphSVG.append("text")
           .attr("transform",
-              "translate(" + (widthgraph/2) + " ," + (heightgraph + 30) + ")")
+              "translate(" + (widthgraph/2) + " ," + (heightgraph + 28) + ")")
           .style("text-anchor", "middle")
-          .style("font-size","16px")
+          .style("font-size","12px")
           .text("RGB Value");
 
      // add the y Axis
