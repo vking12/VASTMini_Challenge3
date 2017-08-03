@@ -70,11 +70,6 @@ var imgSystem = function() {
     img.onload = function() {
       ctx.drawImage(img, 0, 0, 331, 331);
       canvas.style.visibility = 'visible';
-
-      if (fLeft === 0){
-        var l = Ladda.create( document.querySelector( '.ladda-button' ) );
-        l.stop();
-      }
     };
 
 
@@ -104,10 +99,6 @@ var imgSystem = function() {
       canvas.style.visibility = 'visible';
       // self.updateProgressBar();
       // alert("fLeft =" + fLeft);
-      if (fLeft === 0){
-        var l = Ladda.create( document.querySelector( '.ladda-button' ) );
-        l.stop();
-      }
     }
 
     // var img = canvas.toDataURL("image/png");

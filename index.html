@@ -134,11 +134,11 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col col-sm-2"><h1 style= "color:black;"><br></h1>
-      <p><font color="#000000">Select Images:</font></p>
+      <div id="selectTxt">Select Dates:</div>
         <select class="selectpicker" multiple>
-          <option id="sAll"> Select All</option>
+          <option id="sAll" selected> Select All</option>
           <option id="none"> None</option>
-          <option id="Mar14" selected>Mar 17th, 2014</option>
+          <option id="Mar14">Mar 17th, 2014</option>
           <option id="Aug14"> Aug 24th, 2014</option>
           <option id="Nov14"> Nov 28th, 2014</option>
           <option id="Dec14"> Dec 30th, 2014</option>
@@ -151,6 +151,7 @@
           <option id="Sep16"> Sep 6th, 2016</option>
           <option id="Dec16"> Dec 19th, 2016</option>
         </select>
+        <script> cLogic(); </script>
 
         <!--- if user decides that the want to select all or select none -->
         <script>
@@ -173,6 +174,7 @@
               document.getElementById("none").selected = false;
               document.getElementById("sAll").selected = false;
               $('.selectpicker').selectpicker('refresh')
+              cLogic();
             }
             else if (selected == 'None'){
               document.getElementById("Mar14").selected = false;
@@ -190,8 +192,11 @@
               document.getElementById("sAll").selected = false;
               document.getElementById("none").selected = false;
               $('.selectpicker').selectpicker('refresh')
+              cLogic();
             }
-
+            else if (selected){
+              cLogic();
+            }
           });
         });
         </script>
@@ -213,8 +218,8 @@
 
     </div>
 
-    <div class="col col-sm-2"><h1 style= "color:black;"><br></h1>
-      <p><font color="#000000">Select Mode:</font></p>
+    <div class="col-sm-2"><h1 style= "color:black;"><br></h1>
+      <div id="selectTxt">Select Mode:</div>
       <select class="selectpicker">
           <option id="RGB" selected>RGB</option>
           <option id="PlantHealth">Plant Health</option>
@@ -236,17 +241,7 @@
       <canvas id = "img8" width="0" height="0" style="visibility: hidden;"></canvas>
     </div>
 
-    <div class="col col-sm-2"><h1 style= "color:black;"><br></h1>
-      <button class="ladda-button" data-color="mint" data-style="contract" onclick="cLogic()">Render</button>
-      <p id="demo"></p>
-
-      <!-- Need the below to run ladda button animations -->
-      <script src="lib/js/spin.min.js"></script>
-      <script src="lib/js/ladda.min.js"></script>
-
-      <!-- Some space to seperate the images from the selectpicker -->
-      <canvas id = "seperate" width="1600" height="20"></canvas>
-
+    <div class="col-sm-2"><h1 style= "color:black;"><br></h1>
       <!-- Divs to keep track of where our small multiple images will be will be  -->
       <div id="txt9"> </div>
       <canvas id = "img9" width="0" height="0" style="visibility: hidden;"></canvas>
