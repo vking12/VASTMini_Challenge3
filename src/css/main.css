@@ -76,21 +76,21 @@
 
 #Canvas1,#Svg1{
   position:absolute;
-  top: 120px;
+  top: 6.5%;
   left:19px;
 }
 
 
 #Canvas2,#Svg2{
   position:absolute;
-  top: 490px;
+  top: 36.5%;
   left:19px;
 }
 
 
 #Canvas3,#Svg3{
   position:absolute;
-  top: 867px;
+  top: 67%;
   left:19px;
 }
 
@@ -203,7 +203,7 @@ input {
   *overflow: hidden;
 }
 
-.progress-bar {
+.my-progress-bar {
     float: left;
     width: 0;
     height: 100%;

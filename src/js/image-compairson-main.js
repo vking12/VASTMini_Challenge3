@@ -71,11 +71,11 @@ $(function(){
 
 		var misM = data.misMatchPercentage;
 
-		if(misM < 20){$('#difference-perc').css("background-color", "#1a9641");}
-		else if(misM < 40){$('#difference-perc').css("background-color", "#a6d96a");}
-		else if(misM < 60){$('#difference-perc').css("background-color", "#ffffbf");}
-		else if(misM < 80){$('#difference-perc').css("background-color", "#fdae61");}
-		else {$('#difference-perc').css("background-color", "#ba2e51");}
+		if(misM < 20){$('#thebar').css("background-color", "#1a9641");}
+		else if(misM < 40){$('#thebar').css("background-color", "#a6d96a");}
+		else if(misM < 60){$('#thebar').css("background-color", "#ffffbf");}
+		else if(misM < 80){$('#thebar').css("background-color", "#fdae61");}
+		else {$('#thebar').css("background-color", "#ba2e51");}
 
 		if(!loaded)
 		{startGraph(); // after everything has been loaded for the image manipulation, start loading the graphs/brushing
