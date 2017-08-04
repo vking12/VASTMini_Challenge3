@@ -145,6 +145,7 @@ var imgSystem = function() {
           });
         } else if (vImage === 'floodB') {
           // add the element to the data collection
+          // THIS HAS BEEN MODIFIED BY VIJAY SO FLOODB IS NOT REAL NAME IT'S A NDVI TYPE IMAGE
           data.push({
             // Position
             X: Number(d.X),
