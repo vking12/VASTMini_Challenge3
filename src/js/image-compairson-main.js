@@ -95,15 +95,6 @@ $(function(){
 
 	var file1,file2; // the two images' paths which we'll be comparing to each other
 	var resembleControl;
-	// var map =
-	// {
-	// 	raw:  { func : resembleControl.ignoreNothing},
-	// 	less: { func : resembleControl.ignoreLess},
-	// 	colors: {func : resembleControl.ignoreColors},
-	// 	antialising: { func: }
-	//
-	// }
-
 
   function redoResemble()
 	{
@@ -114,11 +105,22 @@ $(function(){
 
 		console.log(answer);
 
-				// if(answer.includes('raw')){ resembleControl.ignoreNothing();}
-				// else if(answer.includes('less')){ resembleControl.ignoreLess();}
-				// else if(answer.includes('colors')){ resembleControl.ignoreColors();}
-				// else if(answer.includes('antialising')){ resembleControl.ignoreAntialiasing();}
-				// resembleControl.repaint();
+		setTimeout(function(){
+			if(answer.includes('raw')){ resembleControl.ignoreNothing();}
+			else if(answer.includes('less')){ resembleControl.less();}
+			else if(answer.includes('colors')){ resembleControl.ignoreColors();}
+			else if(answer.includes('antialising')){ resembleControl.ignoreAntialiasing();}
+
+			if(answer.includes('flat')){resemble.outputSettings({errorType: 'flat'});}
+			else if(answer.includes('flatDifferenceIntensity')){resemble.outputSettings({errorType: 'flatDifferenceIntensity'});}
+			else if(answer.includes('movement')){resemble.outputSettings({errorType: 'movement'});}
+			else if(answer.includes('movementDifferenceIntensity')){resemble.outputSettings({errorType: 'movementDifferenceIntensity'});}
+
+		}, 500);
+
+
+
+
 
 	}
 
@@ -163,6 +165,7 @@ $(function(){
 		}
 		else
 		if($this.is('#antialising')){
+			console.log("PRessed?");
 			resembleControl.ignoreAntialiasing();
 
 		}
