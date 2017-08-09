@@ -140,5 +140,6 @@ function cLogic() {
     ctr--;
   }
 
-  // document.getElementById("demo").innerHTML = 'Rendering';
+
+
 }

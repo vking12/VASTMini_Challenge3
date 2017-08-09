@@ -85,11 +85,7 @@ $(function(){
 		else {
 		updateDiffImage(); // re-draw the zoom image
 		// we have to keep the settings from what was done previously
-
 	}
-
-
-
 }
 
 
@@ -117,11 +113,6 @@ $(function(){
 			else if(answer.includes('movementDifferenceIntensity')){resemble.outputSettings({errorType: 'movementDifferenceIntensity'});}
 
 		}, 500);
-
-
-
-
-
 	}
 
 
@@ -275,15 +266,14 @@ $(function(){
 				if(button == "btn1")
 				{
 					  d3.select("#myDate").text(year);
+
 					  changeImage(file,"Canvas1");
 						file1 = file;
 
 						if(file2){
 							resembleControl = resemble(file).compareTo(file2).onComplete(onComplete);
 							console.log("File 2 done ");
-									 redoResemble();
-
-						}
+									 redoResemble();}
 					}
 					else {
 						d3.select("#myOtherDate").text(year);
@@ -293,13 +283,183 @@ $(function(){
 					resembleControl = resemble(file).compareTo(file1).onComplete(onComplete);
 					console.log("File 1 done ");
 							 redoResemble();
-
-
 				}
 				}
 
 
 			});
+
+
+
+
+			function selectPickerChangeImage(thiscanvas)
+			{
+				var type,date,year;
+
+				if(thiscanvas == "Canvas1"){
+						type = $("#TYPE option:selected")[0].label;
+						date = $("#DATE option:selected")[0].label;
+						year = $("#YEAR option:selected")[0].label;}
+				else {
+						type = $("#TYPE2 option:selected")[0].label;
+						date = $("#DATE2 option:selected")[0].label;
+						year = $("#YEAR2 option:selected")[0].label;}
+
+				console.log("Change has occured . . . " + type + "." + date + "/" + year);
+				// figure out if this is button 1 or 2
+				let button =  1;
+				let combinedDate = date + "/" + year;
+				// might be removed later since it'll be arbitrary
+
+				// specify the source of the image
+				let source = "data/";
+				if(type == "RGB"){source += "rgb/";}
+				else if(type == "Plant Health"){source += "plant_health/";}
+				else if(type == "Flood/Burn"){source += "flood_burn/";}
+				else if(type == "Snow/Ice/Clouds"){source += "sic/";}
+				source += "image";
+				let count = 1;
+				// get the correct image count
+				if(year == 2015){count += 4}else if(year == 2016){ count += 8}
+
+				if(date == "08/24" || date == "06/24" || date == "06/26"){count += 1; console.log("We in");}
+				else if(date == "11/28" || date == "09/12" || date == "09/06"){count+=2;}
+				else if(date == "12/30" || date == "11/15" || date == "12/19"){count+=3;}
+
+				if(count <10)
+					{source += "0" + count;}
+				else{source+= "" + count;}
+
+				date = date.replace("/" , "_" ); // specified for the file format
+				source += "_" + year + "_" + date +".png";
+
+				console.log("Source: " + source);
+				file = source;
+				changeImage(file,thiscanvas);
+
+
+				if(thiscanvas == "Canvas1")
+				{file1 = file;
+					d3.select("#myDate").text(combinedDate);
+				if(file2){
+
+					resembleControl = resemble(file).compareTo(file2).onComplete(onComplete);
+					console.log("File 2 done ");
+							 redoResemble();}
+				}
+				else {
+					d3.select("#myOtherDate").text(combinedDate);
+					file2 = file;
+					if(file1){
+						resembleControl = resemble(file).compareTo(file1).onComplete(onComplete);
+						console.log("File 1 done ");
+						 redoResemble();
+				}
+
+			}
+		}
+			// if the year is changed . . .
+
+			$(function() {
+				$('.YEAR').on('change', function(){
+					let date = $("#DATE option:selected")[0].label;
+					let year = $("#YEAR option:selected")[0].label;
+					console.log("Yo. . . " + date + year );
+
+					var newDates;
+					if(year == "2014")
+					newDates = ["03/17","08/24","11/28","12/30"];
+					else if(year == "2015")
+					{
+						newDates = ["02/15","06/24","09/12","11/15"];
+					}
+					else if(year == "2016")
+					{
+						newDates = ["03/06","06/26","09/06","12/19"];
+					}
+					$("#DATE option").each(function(i)
+				{
+					$(this).remove();
+					var node = document.createElement("OPTION");                 // Create a <option> node
+					var textnode = document.createTextNode(newDates[i]);         // Create a text node
+					node.appendChild(textnode);                              // Append the text to <li>
+					document.getElementById("DATE").appendChild(node);     // Append <li> to <ul> with id="myList"
+
+					console.log(i + " - " + $(this).val());
+				})
+
+				$("#DATE").selectpicker('refresh');
+				});})
+
+
+				$(function() {
+					$('.YEAR2').on('change', function(){
+						let date = $("#DATE2 option:selected")[0].label;
+						let year = $("#YEAR2 option:selected")[0].label;
+						console.log("Yo. . . " + date + year );
+
+						var newDates;
+						if(year == "2014")
+						newDates = ["03/17","08/24","11/28","12/30"];
+						else if(year == "2015")
+						{
+							newDates = ["02/15","06/24","09/12","11/15"];
+						}
+						else if(year == "2016")
+						{
+							newDates = ["03/06","06/26","09/06","12/19"];
+						}
+						$("#DATE2 option").each(function(i)
+					{
+						$(this).remove();
+						var node = document.createElement("OPTION");                 // Create a <option> node
+						var textnode = document.createTextNode(newDates[i]);         // Create a text node
+						node.appendChild(textnode);                              // Append the text to <li>
+						document.getElementById("DATE2").appendChild(node);     // Append <li> to <ul> with id="myList"
+
+						console.log(i + " - " + $(this).val());
+					})
+
+					$("#DATE").selectpicker('refresh');
+					});})
+
+     // if type or date is changed . . .
+			$(function() {
+				$('.TYPE').on('change', function(){
+						selectPickerChangeImage("Canvas1");
+				});
+			});
+
+			$(function() {
+				$('.DATE').on('change', function(){
+
+						selectPickerChangeImage("Canvas1");
+				});
+			});
+
+
+
+			// if type or date is changed . . .
+			 $(function() {
+				 $('.TYPE2').on('change', function(){
+
+
+						 selectPickerChangeImage("Canvas2");
+				 });
+			 });
+
+			 $(function() {
+				 $('.DATE2').on('change', function(){
+
+						 selectPickerChangeImage("Canvas2");
+				 });
+			 });
+
+
+
+
+
+
 
  // when we start out, load these two images.
 		$(document).ready(function(){
