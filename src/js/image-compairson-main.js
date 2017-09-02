@@ -389,6 +389,7 @@ $(function(){
 				})
 
 				$("#DATE").selectpicker('refresh');
+				selectPickerChangeImage("Canvas1");
 				});})
 
 
@@ -420,7 +421,9 @@ $(function(){
 						console.log(i + " - " + $(this).val());
 					})
 
-					$("#DATE").selectpicker('refresh');
+					$("#DATE2").selectpicker('refresh');
+						 selectPickerChangeImage("Canvas2");
+
 					});})
 
      // if type or date is changed . . .
